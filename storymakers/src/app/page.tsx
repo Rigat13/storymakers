@@ -4,6 +4,7 @@ import Layout from './layout';
 export default function Home() {
     return (
         <Layout>
+            <div className="foreground-image"></div>
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
                 <div className="flex flex-row">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
@@ -70,6 +71,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <div className="footer-image"></div>
             </main>
         </Layout>
     );
