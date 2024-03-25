@@ -1,7 +1,7 @@
 import React from 'react';
-import Layout from './layout';
+import Layout from '../layout';
 
-export default function Home() {
+export default function Page() {
     return (
         <Layout>
             <div className="foreground-image"></div>
@@ -34,7 +34,7 @@ export default function Home() {
                     <div className="w-1/2 p-4 ml-20">
                         <img src="gallery-base.png" alt="Gallery base"/>
                     </div>
-                        {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
+                    {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
 
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
