@@ -80,6 +80,7 @@ body {
 .flip-card {
   background-color: transparent;
   width: 250px;
+  min-width: 250px;
   height: 250px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   margin-right: 75px;
