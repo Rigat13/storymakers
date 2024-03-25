@@ -48,6 +48,52 @@ body {
   pointer-events: none; /* Make it non-interactable */
 }
 
+/* ---------------------------------------------------- LANGUAGE SELECTOR ---------------------------------------------------- */
+
+.language-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+}
+
+.language-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgb(185, 185, 255);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: white;
+  background-color: #7f7ffd;
+  border-radius: 15px;
+}
+
+.language-selector:hover .dropdown-content {
+  display: block;
+}
+
 /* ---------------------------------------------------- HOVER BUTTONS ---------------------------------------------------- */
 
 .button-with-hover {

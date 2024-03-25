@@ -5,6 +5,14 @@ export default function Home() {
     return (
         <Layout>
             <div className="foreground-image"></div>
+            {/* |||||||||||||||||||||||||||||||||| SELECTOR D'IDIOMA |||||||||||||||||||||||||||||||||| */}
+            <div className="language-selector">
+                <button className="language-button">ca</button>
+                <div className="dropdown-content">
+                    <a href="#">es</a>
+                    <a href="#">en</a>
+                </div>
+            </div>
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
                 <div className="flex flex-row">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
