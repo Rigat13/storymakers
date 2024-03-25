@@ -23,8 +23,11 @@ export default function Home() {
                         </div>
                     </div>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
-                    <div className="w-1/2 p-4 ml-20">
-                        <img src="gallery-base.png" alt="Gallery base"/>
+                    <div className="gallery-container">
+                        <div className="w-1/2 p-4 ml-20">
+                            <img src="gallery-base.png" alt="Gallery base"/>
+                        </div>
+                        {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
                     </div>
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}

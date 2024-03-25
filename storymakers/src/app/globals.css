@@ -23,9 +23,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-.button-with-hover {
-  position: relative;
-}
+
+/* ---------------------------------------------------- FOREGROUND ---------------------------------------------------- */
+
 .foreground-image {
   position: fixed;
   width: 100vw;
@@ -46,6 +46,12 @@ body {
   background-image: url("../../public/footer.png");
   z-index: 1000; /* Ensure it's above other content */
   pointer-events: none; /* Make it non-interactable */
+}
+
+/* ---------------------------------------------------- HOVER BUTTONS ---------------------------------------------------- */
+
+.button-with-hover {
+  position: relative;
 }
 
 .hover-image {
@@ -72,6 +78,9 @@ body {
 .button-with-hover:nth-child(2) .hover-image {
   background-image: url("../../public/button-hover-user-ca.png");
 }
+
+/* ---------------------------------------------------- BANNER ---------------------------------------------------- */
+
 .banner-container {
   height: 300px; /* Adjust height as needed */
   width: 100vw; /* Expand to full viewport width */
@@ -90,6 +99,8 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+
+/* ---------------------------------------------------- FLIP CARD ---------------------------------------------------- */
 
 .flip-card {
   background-color: transparent;
@@ -139,4 +150,7 @@ body {
   color: white;
   transform: rotateY(180deg);
 }
+
+/* ---------------------------------------------------- CARROUSEL ---------------------------------------------------- */
+
 
