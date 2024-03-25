@@ -24,14 +24,12 @@ export default function Home() {
                         <img src="gallery-base.png" alt="Gallery base"/>
                     </div>
                 </div>
+                <h1 className="text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">Reptes</h1>
                 <div className="banner-container">
+                    <h1 className="not-selectable text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">-------</h1>
                     <div className="square"></div>
                     <div className="square"></div>
                     <div className="square"></div>
-                    <div className="square"></div>
-                    <div className="square"></div>
-                    <div className="square"></div>
-                    {/* Add more squares as needed */}
                 </div>
             </main>
         </Layout>
