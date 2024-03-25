@@ -24,6 +24,15 @@ export default function Home() {
                         <img src="gallery-base.png" alt="Gallery base"/>
                     </div>
                 </div>
+                <div className="banner-container">
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    {/* Add more squares as needed */}
+                </div>
             </main>
         </Layout>
     );

@@ -15,6 +15,11 @@
     --background-end-rgb: 10, 5, 40;
   }
 }
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -53,9 +58,32 @@ body {
 .button-with-hover:nth-child(2) .hover-image {
   background-image: url("../../public/button-hover-user-ca.png");
 }
+.banner-container {
+  height: 300px; /* Adjust height as needed */
+  width: 100vw; /* Expand to full viewport width */
+  background-image: url("../../public/orange-reel.png");
+  background-repeat: repeat-x; /* Repeat horizontally */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+}
+
+.square {
+  width: 250px;
+  height: 250px;
+  background-color: blue;
+  margin-right: 150px; /* Adjust spacing between squares */
+  animation: moveLeft 5s linear infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
+
+
