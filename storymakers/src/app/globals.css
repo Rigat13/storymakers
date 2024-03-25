@@ -78,14 +78,74 @@ body {
   user-select: none;
 }
 
+/* TODO REMOVE */
 .square {
   width: 250px;
   height: 250px;
-  background-image: url("../../public/tedx-business.png");
+  background-image: url("../../public/tedx2024-challenge.png");
   background-position: center;
   margin-right: 150px;
   border-radius: 40px;
+  position: relative;
 }
 
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin-right: 75px;
+  margin-left: 75px;
+}
 
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotate3d(0, 1, 0, -180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front {
+  background-image: url("../../public/tedx2024-challenge.png");
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 40px;
+}
+
+.flip-card-back {
+  background-image: url("../../public/tedx2024-challenge-rewards.png");
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 40px;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
 

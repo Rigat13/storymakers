@@ -26,10 +26,24 @@ export default function Home() {
                 </div>
                 <h1 className="text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">Reptes</h1>
                 <div className="banner-container">
-                    <h1 className="not-selectable text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">-------</h1>
-                    <div className="square"></div>
-                    <div className="square"></div>
-                    <div className="square"></div>
+                    <div className="flip-card">
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front"></div>
+                            <div className="flip-card-back"></div>
+                        </div>
+                    </div>
+                    <div className="flip-card">
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front"></div>
+                            <div className="flip-card-back"></div>
+                        </div>
+                    </div>
+                    <div className="flip-card">
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front"></div>
+                            <div className="flip-card-back"></div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </Layout>
