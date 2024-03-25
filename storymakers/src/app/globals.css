@@ -61,7 +61,6 @@ body {
 .banner-container {
   height: 300px; /* Adjust height as needed */
   width: 100vw; /* Expand to full viewport width */
-  background-image: url("../../public/orange-reel.png");
   background-repeat: repeat-x; /* Repeat horizontally */
   display: flex;
   align-items: center; /* Center content vertically */
@@ -76,17 +75,6 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-/* TODO REMOVE */
-.square {
-  width: 250px;
-  height: 250px;
-  background-image: url("../../public/tedx2024-challenge.png");
-  background-position: center;
-  margin-right: 150px;
-  border-radius: 40px;
-  position: relative;
 }
 
 .flip-card {
@@ -114,19 +102,7 @@ body {
 }
 
 /* Position the front and back side */
-.flip-card-front {
-  background-image: url("../../public/tedx2024-challenge.png");
-  background-position: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-  border-radius: 40px;
-}
-
-.flip-card-back {
-  background-image: url("../../public/tedx2024-challenge-rewards.png");
+.flip-card-front, .flip-card-back {
   background-position: center;
   position: absolute;
   width: 100%;
