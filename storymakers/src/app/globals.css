@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 10, 5, 40;
+  --background-start-rgb: 220, 254, 255;
+  --background-end-rgb: 249, 236, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 16, 0, 177;
+    --background-end-rgb: 10, 5, 40;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+.button-with-hover {
+  position: relative;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+}
+
+.button-with-hover:hover .hover-image {
+  opacity: 1; /* Show on hover */
+}
+
+/* Adjust the background images for hover effect */
+.button-with-hover:nth-child(1) .hover-image {
+  background-image: url("../../public/button-hover-business-ca.png");
+}
+
+.button-with-hover:nth-child(2) .hover-image {
+  background-image: url("../../public/button-hover-user-ca.png");
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
