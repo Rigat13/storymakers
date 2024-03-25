@@ -31,12 +31,11 @@ export default function Home() {
                         </div>
                     </div>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
-                    <div className="gallery-container">
-                        <div className="w-1/2 p-4 ml-20">
-                            <img src="gallery-base.png" alt="Gallery base"/>
-                        </div>
-                        {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
+                    <div className="w-1/2 p-4 ml-20">
+                        <img src="gallery-base.png" alt="Gallery base"/>
                     </div>
+                        {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
+
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
                 <h1 className="text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">Reptes</h1>
