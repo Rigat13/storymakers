@@ -20,6 +20,7 @@ async function autoCarrousel() {
 
 export default function Carrousel() {
     let carouselListRef = useRef(null);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     let carouselItemsRefs = Array.from({length: 5}, () => useRef(null));
 
     useEffect(() => {
