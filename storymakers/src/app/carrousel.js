@@ -2,7 +2,7 @@
 import React, {useEffect, useRef} from 'react';
 
 let isCooldown = false;
-let autoCarrouselDelay = 3000;
+let autoCarrouselDelay = 3500;
 let elems;
 
 async function autoCarrousel() {
