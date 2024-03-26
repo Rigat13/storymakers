@@ -241,27 +241,27 @@ body {
   justify-content: center;
   color: #fff;
   font-size: 0px;
-  width: 150px;
-  height: 250px;
+  width: 245px;
+  height: 436px;
   border-radius: 12px;
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
   position: absolute;
   transition: all 0.3s ease-in;
 }
 .carousel__item:nth-child(1) {
-  background: linear-gradient(45deg, #2d35eb 0%, #904ed4 100%);
+  background-image: url("../../public/reel-1.png");
 }
 .carousel__item:nth-child(2) {
-  background: linear-gradient(45deg, #2d35eb 0%, #fdbb2d 100%);
+  background-image: url("../../public/reel-2.png");
 }
 .carousel__item:nth-child(3) {
-  background: linear-gradient(45deg, #2d35eb 0%, #22c1c3 100%);
+  background-image: url("../../public/reel-3.png");
 }
 .carousel__item:nth-child(4) {
-  background: linear-gradient(45deg, #fdbb2d 0%, #904ed4 100%);
+  background-image: url("../../public/reel-4.png");
 }
 .carousel__item:nth-child(5) {
-  background: linear-gradient(45deg, #22c1c3 0%, #904ed4 100%);
+  background-image: url("../../public/reel-5.png");
 }
 .carousel__item[data-pos="0"] {
   z-index: 5;
