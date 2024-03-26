@@ -34,6 +34,17 @@ export default function Page() {
                     <div className="w-1/2 p-4 ml-20">
                         <img src="gallery-base.png" alt="Gallery base"/>
                     </div>
+                    <div className="carousel">
+                        <ul className="carousel__list">
+                            <li className="carousel__item" data-pos="-2">1</li>
+                            <li className="carousel__item" data-pos="-1">2</li>
+                            <li className="carousel__item" data-pos="0">3</li>
+                            <li className="carousel__item" data-pos="1">4</li>
+                            <li className="carousel__item" data-pos="2">5</li>
+                        </ul>
+                    </div>
+                    {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+                    <script src="carrousel.js"></script>
                     {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
 
                 </div>

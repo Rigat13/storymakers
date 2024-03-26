@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './layout';
+import Carrousel from './carrousel';
 
 export default function Home() {
     return (
@@ -34,6 +35,7 @@ export default function Home() {
                     <div className="w-1/2 p-4 ml-20">
                         <img src="gallery-base.png" alt="Gallery base"/>
                     </div>
+                    <Carrousel />
                         {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
 
                 </div>
