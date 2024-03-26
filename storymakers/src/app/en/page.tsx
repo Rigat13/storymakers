@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../layout';
+import Carrousel from "@/app/carrousel";
 
 export default function Page() {
     return (
@@ -14,7 +15,7 @@ export default function Page() {
                 </div>
             </div>
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
-                <div className="flex flex-row">
+                <div className="flex flex-row relative">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
                     <div className="w-1/2 p-4 mr-20">
                         <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
@@ -31,22 +32,14 @@ export default function Page() {
                         </div>
                     </div>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
-                    <div className="w-1/2 p-4 ml-20">
-                        <img src="gallery-base.png" alt="Gallery base"/>
+                    <div className="grid w-1/2 p-4 ml-20 relative justify-center items-center">
+                        <div className="col-start-1 row-start-1 relative">
+                            <img src="gallery-base.png" alt="Gallery base"/>
+                            <div className="absolute top-20 left-0 right-0 flex justify-center">
+                                <Carrousel />
+                            </div>
+                        </div>
                     </div>
-                    <div className="carousel">
-                        <ul className="carousel__list">
-                            <li className="carousel__item" data-pos="-2">1</li>
-                            <li className="carousel__item" data-pos="-1">2</li>
-                            <li className="carousel__item" data-pos="0">3</li>
-                            <li className="carousel__item" data-pos="1">4</li>
-                            <li className="carousel__item" data-pos="2">5</li>
-                        </ul>
-                    </div>
-                    {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-                    <script src="carrousel.js"></script>
-                    {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
-
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
                 <h1 className="text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">Challenges</h1>

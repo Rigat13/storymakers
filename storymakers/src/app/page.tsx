@@ -40,8 +40,6 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-
-                    {/* |||||||||||||||||||||||||||||||||| TODO ADD CARROUSEL |||||||||||||||||||||||||||||||||| */}
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
                 <h1 className="text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">Reptes</h1>
