@@ -95,11 +95,6 @@ body {
 }
 
 /* ---------------------------------------------------- HOVER BUTTONS ---------------------------------------------------- */
-
-.button-with-hover {
-  position: relative;
-}
-
 .hover-image {
   position: absolute;
   top: 0;
@@ -111,20 +106,46 @@ body {
   transition: opacity 0.3s ease-in-out;
   opacity: 0; /* Initially hidden */
 }
-
+/* ---------- ca ---------- */
+.button-with-hover {
+  position: relative;
+}
 .button-with-hover:hover .hover-image {
   opacity: 1; /* Show on hover */
 }
-
 /* Adjust the background images for hover effect */
 .button-with-hover:nth-child(1) .hover-image {
   background-image: url("../../public/button-hover-business-ca.png");
 }
-
 .button-with-hover:nth-child(2) .hover-image {
   background-image: url("../../public/button-hover-user-ca.png");
 }
-
+/* ---------- es ---------- */
+.button-with-hover-es {
+  position: relative;
+}
+.button-with-hover-es:hover .hover-image {
+  opacity: 1; /* Show on hover */
+}
+.button-with-hover-es:nth-child(1) .hover-image {
+  background-image: url("../../public/button-hover-business-es.png");
+}
+.button-with-hover-es:nth-child(2) .hover-image {
+  background-image: url("../../public/button-hover-user-es.png");
+}
+/* ---------- en ---------- */
+.button-with-hover-en {
+  position: relative;
+}
+.button-with-hover-en:hover .hover-image {
+  opacity: 1; /* Show on hover */
+}
+.button-with-hover-en:nth-child(1) .hover-image {
+  background-image: url("../../public/button-hover-business-en.png");
+}
+.button-with-hover-en:nth-child(2) .hover-image {
+  background-image: url("../../public/button-hover-user-en.png");
+}
 /* ---------------------------------------------------- BANNER ---------------------------------------------------- */
 
 .banner-container {

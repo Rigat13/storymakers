@@ -43,19 +43,19 @@ export default function Home() {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front bg-[url('../../public/tedx2024-challenge.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards.png')]"></div>
+                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards-ca.png')]"></div>
                         </div>
                     </div>
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front bg-[url('../../public/tedx2024-challenge.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards.png')]"></div>
+                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards-ca.png')]"></div>
                         </div>
                     </div>
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front bg-[url('../../public/tedx2024-challenge.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards.png')]"></div>
+                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards-ca.png')]"></div>
                         </div>
                     </div>
                 </div>
@@ -65,19 +65,19 @@ export default function Home() {
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards.png')]"></div>
+                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards-ca.png')]"></div>
                         </div>
                     </div>
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards.png')]"></div>
+                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards-ca.png')]"></div>
                         </div>
                     </div>
                     <div className="flip-card">
                         <div className="flip-card-inner">
                             <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards.png')]"></div>
+                            <div className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards-ca.png')]"></div>
                         </div>
                     </div>
                 </div>
