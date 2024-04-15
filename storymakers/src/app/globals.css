@@ -52,8 +52,9 @@ body {
 
 .language-selector {
   display: inline-block;
-  position: relative; /* Ensure the dropdown content is positioned relative to this element */
-
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
 
 .language-button {
@@ -121,7 +122,7 @@ body {
   transform: scale(1.1);
 }
 
-/* ---------------------------------------------------- SIDE BAR ---------------------------------------------------- */
+/* ---------------------------------------------------- SIDE BAR + LANG ---------------------------------------------------- */
 
 .side-bar-button {
   position: fixed;
@@ -178,28 +179,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  margin-bottom: 20px;
-}
-
-.language-selector {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-.close-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
 }
 /* ---------------------------------------------------- USER BUTTONS ---------------------------------------------------- */
 
