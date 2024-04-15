@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 import Layout from './layout';
 import Carrousel from './carrousel';
 import SidebarMenu from "@/app/SidebarMenu";
+import {defaultLang, dictionary} from "@/content";
+import {useSearchParams } from "next/navigation";
 
 export default function Home() {
+    const searchParams = useSearchParams();
+    const lang = searchParams.get('lang') || defaultLang;
+
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const toggleSidebar = () => {
@@ -37,7 +42,7 @@ export default function Home() {
             <button className="side-bar-button" onClick={toggleSidebar}>
                 <img src="logo-burger.svg" alt="Side bar" />
             </button>
-            <SidebarMenu isOpen={isSidebarOpen} onClose={toggleSidebar} />
+            <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>
 
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
                 <div className="flex flex-row relative">
@@ -67,9 +72,9 @@ export default function Home() {
                     </div>
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
-                <h1 className="text-6xl font-bold mt-60 mb-10 text-[#F57712]">Repte</h1>
+                <h1 className="text-6xl font-bold mt-60 mb-10 text-[#F57712]">{dictionary[lang]?.title_challenges}</h1>
                 <div className="banner-container bg-[url('../../public/orange-reel.png')]">
-                    <a href={"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html"} target="_blank">
+                    <a href={"https://tally.so/r/wk6oN1"} target="_blank">
                         <div className="flip-card">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front bg-[url('../../public/tedx2024-challenge.png')]"></div>
@@ -80,7 +85,7 @@ export default function Home() {
                     </a>
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| MARQUES |||||||||||||||||||||||||||||||||| */}
-                <h1 className="text-6xl font-bold mt-20 mb-10 text-[#0059A6]">Marques</h1>
+                <h1 className="text-6xl font-bold mt-20 mb-10 text-[#0059A6]">{dictionary[lang]?.title_brands}</h1>
                 <div className="banner-container bg-[url('../../public/blue-reel.png')]">
                     <a href={"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html"} target="_blank">
                         <div className="flip-card">
