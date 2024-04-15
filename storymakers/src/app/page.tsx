@@ -31,18 +31,17 @@ export default function Home() {
                         </div>
                     </div>*/}
                 </div>
-                <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
+                <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-20"/>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
-                    <div className="grid w-1/2 p-4 ml-20 relative justify-center items-center">
-                        <div className="col-start-1 row-start-1 relative">
-
-                            <div className="absolute top-20 left-0 right-0 flex justify-center">
-                                <Carrousel />
-                            </div>
+                <div className="mt-10">
+                    <div className="">
+                        <div className="">
+                            <Carrousel />
                         </div>
                     </div>
+                </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
-                <h1 className="text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">Reptes</h1>
+                <h1 className="text-6xl font-bold mt-60 mb-10 text-[#FF4A00]">Reptes</h1>
                 <div className="banner-container bg-[url('../../public/orange-reel.png')]">
                     <div className="flip-card">
                         <div className="flip-card-inner">

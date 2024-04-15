@@ -247,6 +247,8 @@ body {
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
   position: absolute;
   transition: all 0.7s ease-in;
+  background-size: cover; /* Ensures the background image covers the entire item */
+  background-position: top; /* Puts to the top (or either center) the background image within the item */
 }
 .carousel__item:nth-child(1) {
   background-image: url("../../public/reel-1.png");
