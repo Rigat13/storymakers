@@ -5,7 +5,6 @@ import Carrousel from './carrousel';
 export default function Home() {
     return (
         <Layout>
-            <div className="foreground-image"></div>
             {/* |||||||||||||||||||||||||||||||||| SELECTOR D'IDIOMA |||||||||||||||||||||||||||||||||| */}
             <div className="language-selector">
                 <button className="language-button">ca</button>
@@ -17,7 +16,7 @@ export default function Home() {
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
                 <div className="flex flex-row relative">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
-                    <div className="w-1/2 p-4 mr-20">
+                    { /* <div className="w-1/2 p-4 mr-20">
                         <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
                         <img src="tagline-ca.png" alt="Logotip - Storymakers" className="mb-10"/>
                         <div className="flex justify-center">
@@ -30,17 +29,18 @@ export default function Home() {
                                 <img src="button-user-ca.png" alt="Right Button" className="button-image"/>
                             </a>
                         </div>
-                    </div>
+                    </div>*/}
+                </div>
+                <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
                     <div className="grid w-1/2 p-4 ml-20 relative justify-center items-center">
                         <div className="col-start-1 row-start-1 relative">
-                            <img src="gallery-base.png" alt="Gallery base"/>
+
                             <div className="absolute top-20 left-0 right-0 flex justify-center">
                                 <Carrousel />
                             </div>
                         </div>
                     </div>
-                </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
                 <h1 className="text-6xl font-bold mt-20 mb-10 text-[#FF4A00]">Reptes</h1>
                 <div className="banner-container bg-[url('../../public/orange-reel.png')]">

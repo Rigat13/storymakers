@@ -34,7 +34,6 @@ export default function Page() {
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
                     <div className="grid w-1/2 p-4 ml-20 relative justify-center items-center">
                         <div className="col-start-1 row-start-1 relative">
-                            <img src="gallery-base.png" alt="Gallery base"/>
                             <div className="absolute top-20 left-0 right-0 flex justify-center">
                                 <Carrousel />
                             </div>
