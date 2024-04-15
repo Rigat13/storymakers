@@ -213,6 +213,7 @@ body {
   font-size: x-large;
   border-radius: 20px;
   padding: 10px;
+  allign-items: center;
 }
 
 .user-button:hover {
@@ -232,6 +233,19 @@ body {
   transition: opacity 0.3s ease-in-out;
   opacity: 0; /* Initially hidden */
 }
+.hover-image-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; /* Initially hidden */
+  transform: scale(1.1);
+}
+
 /* ---------- ca ---------- */
 .button-with-hover {
   position: relative;
