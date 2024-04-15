@@ -13,6 +13,23 @@ export default function Home() {
                     <a href="/en">en</a>
                 </div>
             </div>
+            <div className="social-networks">
+                <button className="social-network-button">
+                    <a href="https://www.instagram.com/storymakers.es/" target="_blank">
+                        <img src="logo_instagram.svg" alt="Instagram"/>
+                    </a>
+                </button>
+                {/*<button className="social-network-button">
+                    <a href="https://www.instagram.com/storymakers.es/" target="_blank">
+                        <img src="logo_tiktok.svg" alt="TikTok"/>
+                    </a>
+                </button>*/}
+                <button className="social-network-button">
+                    <a href="https://www.linkedin.com/company/stoymakers-es" target="_blank">
+                        <img src="logo_linkedin.svg" alt="LinkedIn"/>
+                    </a>
+                </button>
+            </div>
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
                 <div className="flex flex-row relative">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
