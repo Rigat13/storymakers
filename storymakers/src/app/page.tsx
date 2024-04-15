@@ -23,7 +23,7 @@ export default function Home() {
             <div className="social-networks">
                 <button className="social-network-button">
                     <a href="https://www.instagram.com/storymakers.es/" target="_blank">
-                        <img src="logo_instagram.svg" alt="Instagram"/>
+                        <img src="logo_instagram.png" alt="Instagram"/>
                     </a>
                 </button>
                 {/*<button className="social-network-button">
@@ -33,7 +33,7 @@ export default function Home() {
                 </button>*/}
                 <button className="social-network-button">
                     <a href="https://www.linkedin.com/company/stoymakers-es" target="_blank">
-                        <img src="logo_linkedin.svg" alt="LinkedIn"/>
+                        <img src="logo_linkedin.png" alt="LinkedIn"/>
                     </a>
                 </button>
             </div>
