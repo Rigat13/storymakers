@@ -4,10 +4,6 @@ import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Storymakers",
-  description: "Construeix la història de la teva marca, amb el client com a protagonista",
-};
 
 export default function RootLayout({
   children,

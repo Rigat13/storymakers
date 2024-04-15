@@ -51,10 +51,9 @@ body {
 /* ---------------------------------------------------- LANGUAGE SELECTOR ---------------------------------------------------- */
 
 .language-selector {
-  position: fixed;
-  top: 20px;
-  right: 20px;
   display: inline-block;
+  position: relative; /* Ensure the dropdown content is positioned relative to this element */
+
 }
 
 .language-button {
@@ -69,7 +68,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   right: 0;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgb(185, 185, 255);
@@ -125,10 +124,8 @@ body {
 /* ---------------------------------------------------- SIDE BAR ---------------------------------------------------- */
 
 .side-bar-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  display: block;
+  margin: 20px;
+  display: flex;
   width: 75px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   transition: transform 0.3s ease;
@@ -138,6 +135,91 @@ body {
   transform: scale(1.1);
 }
 
+.side-bar-category-button {
+  margin: 20px;
+  display: flex;
+  width: 250px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+  background-color: #232323;
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.side-bar-category-button:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: #232323;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: black;
+  transition: left 0.3s ease;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.menu {
+  padding-top: 50px; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.language-selector {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+/* ---------------------------------------------------- USER BUTTONS ---------------------------------------------------- */
+
+.user-button {
+  margin: 20px;
+  display: flex;
+  width: 250px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+  background-color: #232323;
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.user-button:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: #232323;
+}
 /* ---------------------------------------------------- HOVER BUTTONS ---------------------------------------------------- */
 .hover-image {
   position: absolute;

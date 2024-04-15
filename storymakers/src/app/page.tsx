@@ -1,18 +1,20 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Layout from './layout';
 import Carrousel from './carrousel';
+import SidebarMenu from "@/app/SidebarMenu";
 
 export default function Home() {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
+
     return (
         <Layout>
-            {/* |||||||||||||||||||||||||||||||||| BARRA TOP - XARXES I LATERAL |||||||||||||||||||||||||||||||||| */}
-            <div className="language-selector">
-                <button className="language-button">ca</button>
-                <div className="dropdown-content">
-                    <a href="/es">es</a>
-                    <a href="/en">en</a>
-                </div>
-            </div>
+            {/* |||||||||||||||||||||||||||||||||| BARRA XARXES |||||||||||||||||||||||||||||||||| */}
             <div className="social-networks">
                 <button className="social-network-button">
                     <a href="https://www.instagram.com/storymakers.es/" target="_blank">
@@ -30,9 +32,13 @@ export default function Home() {
                     </a>
                 </button>
             </div>
-            <button className="side-bar-button">
-                <img src="logo-burger.svg" alt="Side bar"/>
+            {/* |||||||||||||||||||||||||||||||||| BARRA LATERAL |||||||||||||||||||||||||||||||||| */}
+
+            <button className="side-bar-button" onClick={toggleSidebar}>
+                <img src="logo-burger.svg" alt="Side bar" />
             </button>
+            <SidebarMenu isOpen={isSidebarOpen} onClose={toggleSidebar} />
+
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
                 <div className="flex flex-row relative">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
