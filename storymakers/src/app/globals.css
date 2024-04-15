@@ -122,6 +122,22 @@ body {
   transform: scale(1.1);
 }
 
+/* ---------------------------------------------------- SIDE BAR ---------------------------------------------------- */
+
+.side-bar-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: block;
+  width: 75px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+.side-bar-button:hover {
+  transform: scale(1.1);
+}
+
 /* ---------------------------------------------------- HOVER BUTTONS ---------------------------------------------------- */
 .hover-image {
   position: absolute;

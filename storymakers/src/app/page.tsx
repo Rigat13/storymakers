@@ -5,7 +5,7 @@ import Carrousel from './carrousel';
 export default function Home() {
     return (
         <Layout>
-            {/* |||||||||||||||||||||||||||||||||| SELECTOR D'IDIOMA |||||||||||||||||||||||||||||||||| */}
+            {/* |||||||||||||||||||||||||||||||||| BARRA TOP - XARXES I LATERAL |||||||||||||||||||||||||||||||||| */}
             <div className="language-selector">
                 <button className="language-button">ca</button>
                 <div className="dropdown-content">
@@ -30,6 +30,9 @@ export default function Home() {
                     </a>
                 </button>
             </div>
+            <button className="side-bar-button">
+                <img src="logo-burger.svg" alt="Side bar"/>
+            </button>
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
                 <div className="flex flex-row relative">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
