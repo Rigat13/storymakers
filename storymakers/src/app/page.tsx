@@ -95,18 +95,22 @@ export default function Home() {
                             </div>
                         </div>
                     </a>
-                    <div className="flip-card">
-                        <div className="flip-card-inner">
-                            <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                    <a href={"https://tedxupfmataro.es/"} target="_blank">
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
+                                <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="flip-card">
-                        <div className="flip-card-inner">
-                            <div className="flip-card-front bg-[url('../../public/nosense-business.png')]"></div>
-                            <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                    </a>
+                    <a href={"https://nosense.es/"} target="_blank">
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front bg-[url('../../public/nosense-business.png')]"></div>
+                                <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </main>
         </Layout>

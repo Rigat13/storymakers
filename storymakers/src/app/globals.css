@@ -122,7 +122,7 @@ body {
   transform: scale(1.1);
 }
 
-/* ---------------------------------------------------- SIDE BAR + LANG ---------------------------------------------------- */
+/* ---------------------------------------------------- SIDE BAR ---------------------------------------------------- */
 
 .side-bar-button {
   position: fixed;
@@ -131,6 +131,7 @@ body {
   width: 75px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   transition: transform 0.3s ease;
+  z-index: 9;
 }
 
 .side-bar-button:hover {
