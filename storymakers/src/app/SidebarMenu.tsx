@@ -15,7 +15,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, onClose, lang }) => {
             </button>
             <div className="menu">
                 <a className="side-bar-category-button" href="https://tally.so/r/wk6oN1">{dictionary[lang]?.btn_tedx_challenge}</a>
-                <a className="side-bar-category-button" href="https://tally.so/r/wk6oN1">{dictionary[lang]?.btn_im_brand}</a>
+                <a className="side-bar-category-button" href="https://tally.so/r/mBG4E1">{dictionary[lang]?.btn_im_brand}</a>
                 <a className="side-bar-category-button" href="https://www.instagram.com/storymakers.es/">{dictionary[lang]?.btn_about_us}</a>
             </div>
             <div className="language-selector">

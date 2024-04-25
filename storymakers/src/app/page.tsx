@@ -5,10 +5,19 @@ import Carrousel from './carrousel';
 import SidebarMenu from "@/app/SidebarMenu";
 import {defaultLang, dictionary} from "@/content";
 import {useSearchParams } from "next/navigation";
+import { Suspense } from 'react';
 
 export default function Home() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <HomeContent />
+        </Suspense>
+    );
+}
+
+function HomeContent() {
     const searchParams = useSearchParams();
-    const lang = searchParams.get('lang') || defaultLang;
+    const lang = searchParams ? searchParams.get('lang') || defaultLang : defaultLang;
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
