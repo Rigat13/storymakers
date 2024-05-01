@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Layout from './layout';
 import Carrousel from './carrousel';
 import SidebarMenu from "@/app/SidebarMenu";
@@ -25,6 +25,12 @@ function HomeContent() {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src = "https://w.behold.so/widget.js";
+        document.head.appendChild(script);
+    }, []);
 
     return (
         <Layout>
@@ -53,8 +59,9 @@ function HomeContent() {
             </button>
             <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>
 
+
             <main className="flex flex-col items-center justify-center min-h-screen p-24">
-                <div className="flex flex-row relative">
+                <div className="">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
                     { /* <div className="w-1/2 p-4 mr-20">
                         <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
@@ -70,6 +77,7 @@ function HomeContent() {
                             </a>
                         </div>
                     </div>*/}
+                    {/* |||||||||||||||||||||||||||||||||| INSTAGRAM |||||||||||||||||||||||||||||||||| */}
                 </div>
                 <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-20"/>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
@@ -80,8 +88,9 @@ function HomeContent() {
                         </div>
                     </div>
                 </div>
+                <div data-behold-id="L6ni5jBOB5sAV4XLLBy1"></div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
-                <h1 className="text-6xl font-bold mt-60 mb-10 text-[#F57712]">{dictionary[lang]?.title_challenges}</h1>
+                <h1 className="text-6xl font-bold mt-20 mb-10 text-[#F57712]">{dictionary[lang]?.title_challenges}</h1>
                 <div className="banner-container bg-[url('../../public/orange-reel.png')]">
                     <a href={"https://tally.so/r/wk6oN1"} target="_blank">
                         <div className="flip-card">
