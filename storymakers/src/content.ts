@@ -11,6 +11,9 @@ interface DictionaryEntry {
     know_us: string;
     next_brand: string;
     more_info: string;
+    lessons_title: string;
+    reward: string;
+    tedx_2024: string;
 }
 
 export const dictionary: Record<string, DictionaryEntry> = {
@@ -22,7 +25,10 @@ export const dictionary: Record<string, DictionaryEntry> = {
         title_brands: "Marques",
         know_us: "↓ Coneix-nos ↓",
         next_brand: "→ Vols ser la següent? ←",
-        more_info: "Si t'has quedat amb ganes de saber-ne més, segueix-nos a "
+        more_info: "Si t'has quedat amb ganes de saber-ne més, segueix-nos a ",
+        lessons_title: "Lliçons exclusives",
+        reward: "🎉  Recompensa  🎉",
+        tedx_2024: "TEDxMataró 2024"
     },
     es: {
         btn_tedx_challenge: "Reto TEDx",
@@ -32,7 +38,10 @@ export const dictionary: Record<string, DictionaryEntry> = {
         title_brands: "Marcas",
         know_us: "↓ Conócenos ↓",
         next_brand: " ¿Quieres ser la siguiente? ",
-        more_info: "Si te has quedado con ganas de saber más, síguenos en "
+        more_info: "Si te has quedado con ganas de saber más, síguenos en ",
+        lessons_title: "Lecciones exclusivas",
+        reward: "🎉  Recompensa  🎉",
+        tedx_2024: "TEDxMataró 2024"
     },
     en: {
         btn_tedx_challenge: "TEDx Challenge",
@@ -42,6 +51,9 @@ export const dictionary: Record<string, DictionaryEntry> = {
         title_brands: "Brands",
         know_us: "↓ About us ↓",
         next_brand: "→ Want to be the next one? ←",
-        more_info: "If you want to know more, follow us on "
+        more_info: "If you want to know more, follow us on ",
+        lessons_title: "Reward: Exclusive lessons",
+        reward: "🎉  Reward  🎉",
+        tedx_2024: "TEDxMataró 2024"
     },
 }

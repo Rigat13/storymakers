@@ -477,3 +477,65 @@ body {
 .more_info_link:hover{
   color: #F57712;
 }
+
+/* ---------------------------------------------------- REWARD PAGE ---------------------------------------------------- */
+.centered-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.big-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  background-color: #F57712;
+  padding: 0.5rem 2rem;
+  border-radius: 3rem;
+  margin: 1rem;
+  margin-top: 7rem;
+}
+
+.subtitle {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 0.9;
+  color: #000000;
+}
+
+.subtitle2 {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+  margin-top: 0rem;
+}
+
+.youtube-title {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background-color: #0059A6;
+  padding: 0.5rem 2rem;
+  border-radius: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+}
+
+.youtube-video {
+  border-radius: 15px; /* Adjust the border radius as needed */
+  overflow: hidden; /* Ensure the iframe is clipped within the container */
+}
+
+.youtube-video iframe {
+  width: 70vw; /* Adjust the width as needed */
+  height: 40vw;
+  border: none; /* Remove iframe border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+}
