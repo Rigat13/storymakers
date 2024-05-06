@@ -77,8 +77,8 @@ function HomeContent() {
                             </a>
                         </div>
                     </div>*/}
-                    {/* |||||||||||||||||||||||||||||||||| INSTAGRAM |||||||||||||||||||||||||||||||||| */}
                 </div>
+                    {/* |||||||||||||||||||||||||||||||||| INSTAGRAM |||||||||||||||||||||||||||||||||| */}
                 <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-20"/>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
                 <div className="mt-10">
@@ -88,7 +88,6 @@ function HomeContent() {
                         </div>
                     </div>
                 </div>
-                <div data-behold-id="L6ni5jBOB5sAV4XLLBy1"></div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
                 <h1 className="text-6xl font-bold mt-20 mb-10 text-[#F57712]">{dictionary[lang]?.title_challenges}</h1>
                 <div className="banner-container bg-[url('../../public/orange-reel.png')]">
@@ -129,7 +128,16 @@ function HomeContent() {
                             </div>
                         </div>
                     </a>
+
                 </div>
+                <a href="https://tally.so/r/mBG4E1" target="_blank">
+                    <h1 className="brand_link">{dictionary[lang]?.next_brand}</h1>
+                </a>
+
+                <div data-behold-id="L6ni5jBOB5sAV4XLLBy1"></div>
+                <h1 className="more_info">{dictionary[lang]?.more_info}
+                    <a className="more_info_link" href="https://www.instagram.com/storymakers.es/" target="_blank">@storymakers.es</a>
+                </h1>
             </main>
         </Layout>
     );
