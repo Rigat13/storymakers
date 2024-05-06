@@ -104,30 +104,32 @@ function HomeContent() {
                 {/* |||||||||||||||||||||||||||||||||| MARQUES |||||||||||||||||||||||||||||||||| */}
                 <h1 className="text-6xl font-bold mt-20 mb-10 text-[#0059A6]">{dictionary[lang]?.title_brands}</h1>
                 <div className="banner-container bg-[url('../../public/blue-reel.png')]">
-                    <a href={"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html"} target="_blank">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front bg-[url('../../public/vanguardia-business.png')]"></div>
-                                <div className="flip-card-back bg-[url('../../public/tedx-back-card.png')]"></div>
+                    <div className="banner-content">
+                        <a href={"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html"} target="_blank">
+                            <div className="flip-card">
+                                <div className="flip-card-inner">
+                                    <div className="flip-card-front bg-[url('../../public/vanguardia-business.png')]"></div>
+                                    <div className="flip-card-back bg-[url('../../public/tedx-back-card.png')]"></div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href={"https://tedxupfmataro.es/"} target="_blank">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
-                                <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                        </a>
+                        <a href={"https://tedxupfmataro.es/"} target="_blank">
+                            <div className="flip-card">
+                                <div className="flip-card-inner">
+                                    <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
+                                    <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href={"https://nosense.es/"} target="_blank">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front bg-[url('../../public/nosense-business.png')]"></div>
-                                <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                        </a>
+                        <a href={"https://nosense.es/"} target="_blank">
+                            <div className="flip-card">
+                                <div className="flip-card-inner">
+                                    <div className="flip-card-front bg-[url('../../public/nosense-business.png')]"></div>
+                                    <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
 
                 </div>
                 <a href="https://tally.so/r/mBG4E1" target="_blank">
