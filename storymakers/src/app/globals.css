@@ -505,11 +505,13 @@ body {
   font-style: italic;
   line-height: 0.9;
   color: #000000;
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
 }
 
 .subtitle2 {
   position: relative;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 400;
   font-style: normal;
   color: #000000;

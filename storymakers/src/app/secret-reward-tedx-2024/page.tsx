@@ -64,15 +64,21 @@ function HomeContent() {
                 <h1 className="subtitle2">{dictionary[lang]?.tedx_2024}</h1>
 
                 {/* VIDEO 1 */}
-                <div className="youtube-title"> <h1>Carles Rigat</h1> </div>
+                <div className="youtube-title"> <h1>Marco Guadalupi</h1> </div>
                 <div className="youtube-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aNZaSyXKIpQ?si=E4O1bgkOQJoCaLxl" allowFullScreen ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=LgMSyUvBYgcC8idL&amp;list=PLVUgk3RWiKOHAhoE9ctORnWFhuI-OlYd5" allowFullScreen ></iframe>
                 </div>
 
                 {/* VIDEO 2 */}
-                <div className="youtube-title"> <h1>Carles Rigat</h1> </div>
+                <div className="youtube-title"> <h1>Maria Berruezo</h1> </div>
                 <div className="youtube-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aNZaSyXKIpQ?si=E4O1bgkOQJoCaLxl" allowFullScreen ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/usVonz0fHrc?si=9GuAsB7WjBWLmpNo" allowFullScreen ></iframe>
+                </div>
+
+                {/* VIDEO 3 */}
+                <div className="youtube-title"> <h1>Berta Segura</h1> </div>
+                <div className="youtube-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nYxxIrzRQc4?si=l_JEjwWds_Wo3F5C" allowFullScreen ></iframe>
                 </div>
             </div>
         </Layout>
