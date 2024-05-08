@@ -66,19 +66,28 @@ function HomeContent() {
                 {/* VIDEO 1 */}
                 <div className="youtube-title"> <h1>Marco Guadalupi</h1> </div>
                 <div className="youtube-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=LgMSyUvBYgcC8idL&amp;list=PLVUgk3RWiKOHAhoE9ctORnWFhuI-OlYd5" allowFullScreen ></iframe>
+                    <iframe width="1120" height="630" src="https://www.youtube.com/embed/videoseries?si=LgMSyUvBYgcC8idL&amp;list=PLVUgk3RWiKOHAhoE9ctORnWFhuI-OlYd5" allowFullScreen ></iframe>
                 </div>
 
                 {/* VIDEO 2 */}
                 <div className="youtube-title"> <h1>Maria Berruezo</h1> </div>
                 <div className="youtube-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/usVonz0fHrc?si=9GuAsB7WjBWLmpNo" allowFullScreen ></iframe>
+                    <iframe width="1120" height="630" src="https://www.youtube.com/embed/usVonz0fHrc?si=9GuAsB7WjBWLmpNo" allowFullScreen ></iframe>
                 </div>
 
                 {/* VIDEO 3 */}
                 <div className="youtube-title"> <h1>Berta Segura</h1> </div>
                 <div className="youtube-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nYxxIrzRQc4?si=l_JEjwWds_Wo3F5C" allowFullScreen ></iframe>
+                    <iframe width="1120" height="630" src="https://www.youtube.com/embed/nYxxIrzRQc4?si=l_JEjwWds_Wo3F5C" allowFullScreen ></iframe>
+                </div>
+
+                <div className="footer">
+                    <div className="footer-text">
+                        <h1 className="more_info2">{dictionary[lang]?.more_info}
+                            <a className="more_info_link2" href="https://www.instagram.com/storymakers.es/" target="_blank">@storymakers.es</a>
+                        </h1>
+                        <h1 className="more_info">©Storymakers 2024</h1>
+                    </div>
                 </div>
             </div>
         </Layout>
