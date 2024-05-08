@@ -60,7 +60,7 @@ function HomeContent() {
             <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>
 
 
-            <main className="flex flex-col items-center justify-center min-h-screen p-24">
+            <main className="flex flex-col items-center justify-center min-h-screen">
                 <div className="">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
                     { /* <div className="w-1/2 p-4 mr-20">
@@ -79,7 +79,7 @@ function HomeContent() {
                     </div>*/}
                 </div>
                     {/* |||||||||||||||||||||||||||||||||| INSTAGRAM |||||||||||||||||||||||||||||||||| */}
-                <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-20"/>
+                <img className="central-logo" src="logo-storymakers.png" alt="Logotip - Storymakers"/>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
                 <div className="mt-10">
                     <div className="">
@@ -89,7 +89,7 @@ function HomeContent() {
                     </div>
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
-                <h1 className="text-6xl font-bold mt-20 mb-10 text-[#F57712]">{dictionary[lang]?.title_challenges}</h1>
+                <h1 className="storymakers-header text-[#F57712]">{dictionary[lang]?.title_challenges}</h1>
                 <div className="banner-container bg-[url('../../public/orange-reel.png')]">
                     <a href={"https://tally.so/r/wk6oN1"} target="_blank">
                         <div className="flip-card">
@@ -102,7 +102,7 @@ function HomeContent() {
                     </a>
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| MARQUES |||||||||||||||||||||||||||||||||| */}
-                <h1 className="text-6xl font-bold mt-20 mb-10 text-[#0059A6]">{dictionary[lang]?.title_brands}</h1>
+                <h1 className="storymakers-header text-[#0059A6]">{dictionary[lang]?.title_brands}</h1>
                 <div className="banner-container bg-[url('../../public/blue-reel.png')]">
                     <div className="banner-content">
                         <a href={"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html"} target="_blank">
@@ -135,8 +135,8 @@ function HomeContent() {
                 <a href="https://tally.so/r/mBG4E1" target="_blank">
                     <h1 className="brand_link">{dictionary[lang]?.next_brand}</h1>
                 </a>
-
                 <div data-behold-id="L6ni5jBOB5sAV4XLLBy1"></div>
+
                 <h1 className="more_info">{dictionary[lang]?.more_info}
                     <a className="more_info_link" href="https://www.instagram.com/storymakers.es/" target="_blank">@storymakers.es</a>
                 </h1>
