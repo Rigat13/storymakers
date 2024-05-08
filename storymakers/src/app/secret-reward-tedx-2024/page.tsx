@@ -5,6 +5,7 @@ import SidebarMenu from "@/app/SidebarMenu";
 import {defaultLang, dictionary} from "@/content";
 import {useSearchParams } from "next/navigation";
 import { Suspense } from 'react';
+import SidebarMenuNotHome from "@/app/SidebarMenuNotHome";
 
 export default function Home() {
     return (
@@ -56,7 +57,7 @@ function HomeContent() {
             <button className="side-bar-button" onClick={toggleSidebar}>
                 <img src="logo-burger.svg" alt="Side bar" />
             </button>
-            <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>
+            <SidebarMenuNotHome  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>
 
             <div className="centered-div">
                 <h2 className="big-title">{dictionary[lang]?.reward}</h2>

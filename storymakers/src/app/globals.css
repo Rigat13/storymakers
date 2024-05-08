@@ -178,6 +178,26 @@ body {
   color: #232323;
 }
 
+.side-bar-category-button-special {
+  margin: 20px;
+  display: flex;
+  width: 250px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+  background-color: #F57712;
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.side-bar-category-button-special:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: #0059A6;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
