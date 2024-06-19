@@ -1,7 +1,7 @@
 "use client";
 import React, {useEffect, useState} from 'react';
 import Layout from './layout';
-import Carrousel from './carrousel';
+import CarrouselData from './carrousel';
 import SidebarMenu from "@/app/SidebarMenu";
 import {defaultLang, dictionary} from "@/content";
 import {useSearchParams } from "next/navigation";
@@ -14,6 +14,7 @@ export default function Home() {
         </Suspense>
     );
 }
+
 
 function HomeContent() {
     const searchParams = useSearchParams();
@@ -31,6 +32,29 @@ function HomeContent() {
         script.src = "https://w.behold.so/widget.js";
         document.head.appendChild(script);
     }, []);
+
+
+   // NUEVO : ITERADOR DE DATOS ,LOS DATOS VIENEN DE UN JSON 
+   type marcasData = { url:string ,card_front:string, card_back:string}
+    var [marcas,setMarcas] = useState([]);
+    useEffect(() => {
+       
+       fetch('./data/marcas.json'
+        ,{
+            headers : { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+             }
+          }
+
+       ).then((res) => res.json())
+       .then((json) => {
+       setMarcas(json.marcas);
+      })
+    
+    })
+    
+
 
     return (
         <Layout>
@@ -63,7 +87,7 @@ function HomeContent() {
             <main className="flex flex-col items-center justify-center min-h-screen">
                 <div className="">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
-                    { /* <div className="w-1/2 p-4 mr-20">
+                    {/*   <div className="w-1/2 p-4 mr-20">
                         <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
                         <img src="tagline-ca.png" alt="Logotip - Storymakers" className="mb-10"/>
                         <div className="flex justify-center">
@@ -81,10 +105,12 @@ function HomeContent() {
                     {/* |||||||||||||||||||||||||||||||||| INSTAGRAM |||||||||||||||||||||||||||||||||| */}
                 <img className="central-logo" src="logo-storymakers.png" alt="Logotip - Storymakers"/>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
-                <div className="mt-10">
+                <div className="m-10">
                     <div className="">
                         <div className="">
-                            <Carrousel />
+                           {/*<Carrousel />*/} 
+                           
+                           <CarrouselData/>
                         </div>
                     </div>
                 </div>
@@ -102,9 +128,31 @@ function HomeContent() {
                     </a>
                 </div>
                 {/* |||||||||||||||||||||||||||||||||| MARQUES |||||||||||||||||||||||||||||||||| */}
+
+
                 <h1 className="storymakers-header text-[#0059A6]">{dictionary[lang]?.title_brands}</h1>
                 <div className="banner-container bg-[url('../../public/blue-reel.png')]">
                     <div className="banner-content">
+                      { 
+                      marcas.map( (marca:marcasData, i) => (
+                      
+                        <a href={marca.url} target="_blank" key={i} >
+                       
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                           
+                            <div className='flip-card-front' style={{backgroundImage:`url('./${marca['card_front']}')`}} ></div>
+                            <div className='flip-card-back'  style={{backgroundImage:`url('./${marca['card_back']}')`}}  ></div>
+                               
+                            </div>
+                        </div>
+                        </a> 
+ 
+                      ))
+                     
+                      }      
+
+                       {/* 
                         <a href={"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html"} target="_blank">
                             <div className="flip-card">
                                 <div className="flip-card-inner">
@@ -129,7 +177,9 @@ function HomeContent() {
                                 </div>
                             </div>
                         </a>
+                        */} 
                     </div>
+                    
 
                 </div>
                 <a href="https://tally.so/r/mBG4E1" target="_blank">

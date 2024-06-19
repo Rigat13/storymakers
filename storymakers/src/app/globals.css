@@ -4,8 +4,9 @@
 
 :root {
   --foreground-rgb: 255, 255, 255; /* old: 10, 5, 40 */
-  --background-start-rgb: 255, 255, 255;  /* old: 220, 254, 255 */
+  --background-start-rgb: 255,255,255;  /* old: 220, 254, 255 */
   --background-end-rgb: 255, 255, 255; /* old: 249, 236, 255 */
+  --index-carousel:0;
 }
 
 @layer utilities {
@@ -236,7 +237,7 @@ body {
   font-size: x-large;
   border-radius: 20px;
   padding: 10px;
-  allign-items: center;
+  align-items: center;
 }
 
 .user-button:hover {
@@ -399,7 +400,7 @@ body {
   font-family: Arial;
   margin-bottom: 30rem;
 }
-.carousel__list {
+.carousel-list {
   display: flex;
   list-style: none;
   position: relative;
@@ -407,7 +408,7 @@ body {
   justify-content: center;
   perspective: 300px;
 }
-.carousel__item {
+.carousel-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -422,7 +423,7 @@ body {
   background-size: cover; /* Ensures the background image covers the entire item */
   background-position: top; /* Puts to the top (or either center) the background image within the item */
 }
-.carousel__item:nth-child(1) {
+/*.carousel__item:nth-child(1) {
   background-image: url("../../public/reel-1.png");
 }
 .carousel__item:nth-child(2) {
@@ -436,31 +437,31 @@ body {
 }
 .carousel__item:nth-child(5) {
   background-image: url("../../public/reel-5.png");
-}
-.carousel__item[data-pos="0"] {
+}*/
+.carousel-item[data-pos="0"] {
   z-index: 5;
 }
-.carousel__item[data-pos="-1"], .carousel__item[data-pos="1"] {
+.carousel-item[data-pos="-1"], .carousel-item[data-pos="1"] {
   opacity: 0.7;
   filter: blur(1px) grayscale(10%);
 }
-.carousel__item[data-pos="-1"] {
+.carousel-item[data-pos="-1"] {
   transform: translateX(-40%) scale(0.9);
   z-index: 4;
 }
-.carousel__item[data-pos="1"] {
+.carousel-item[data-pos="1"] {
   transform: translateX(40%) scale(0.9);
   z-index: 4;
 }
-.carousel__item[data-pos="-2"], .carousel__item[data-pos="2"] {
+.carousel-item[data-pos="-2"], .carousel-item[data-pos="2"] {
   opacity: 0.4;
   filter: blur(3px) grayscale(20%);
 }
-.carousel__item[data-pos="-2"] {
+.carousel-item[data-pos="-2"] {
   transform: translateX(-70%) scale(0.8);
   z-index: 3;
 }
-.carousel__item[data-pos="2"] {
+.carousel-item[data-pos="2"] {
   transform: translateX(70%) scale(0.8);
   z-index: 3;
 }
