@@ -41,11 +41,6 @@ function HomeContent() {
                         <img src="logo_instagram.png" alt="Instagram"/>
                     </a>
                 </button>
-                {/*<button className="social-network-button">
-                    <a href="https://www.instagram.com/storymakers.es/" target="_blank">
-                        <img src="logo_tiktok.svg" alt="TikTok"/>
-                    </a>
-                </button>*/}
                 <button className="social-network-button">
                     <a href="https://www.linkedin.com/company/stoymakers-es" target="_blank">
                         <img src="logo_linkedin.png" alt="LinkedIn"/>
