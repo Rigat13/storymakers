@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+$primary-color:white;
+$color-text-sidebar:white;
+$color-creadores:#F57712;
+$color-marcas:#0059A6;
+$project-color-marcas:#0059A6;
 :root {
-  --foreground-rgb: 255, 255, 255; /* old: 10, 5, 40 */
-  --background-start-rgb: 255,255,255;  /* old: 220, 254, 255 */
-  --background-end-rgb: 255, 255, 255; /* old: 249, 236, 255 */
-  --index-carousel:0;
+  --foreground-rgb: $primary-color /* old: 10, 5, 40 */
+  --background-start-rgb: $primary-color;  /* old: 220, 254, 255 */
+  --background-end-rgb: $primary-color /* old: 249, 236, 255 */
 }
 
 @layer utilities {
@@ -37,6 +41,24 @@ body {
   font-weight: 750; /* Corresponds to Tailwind font-bold */
   margin-top: 5rem; /* Corresponds to Tailwind mt-20 (20 * 0.25rem = 5rem) */
   margin-bottom: 2.5rem; /* Corresponds to Tailwind mb-10 (10 * 0.25rem = 2.5rem) */
+}
+
+//marcas
+.style-color-marcas{
+  color:$color-marcas;
+}
+
+.style-background-marcas{
+  background-color: $color-marcas;
+}
+
+//creadores
+.style-color-creadores{
+  color:$color-creadores;
+}
+
+.style-background-creadores{
+  background-color: $color-creadores;
 }
 
 .central-logo{
@@ -166,7 +188,7 @@ body {
   height: auto; /* Maintain aspect ratio */
   transition: transform 0.3s ease;
   background-color: #232323;
-  color: white;
+  color: $color-text-sidebar;
   font-weight: bold;
   font-size: x-large;
   border-radius: 20px;
@@ -185,7 +207,7 @@ body {
   width: 250px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   transition: transform 0.3s ease;
-  background-color: #F57712;
+  background-color: $color-creadores;
   color: white;
   font-weight: bold;
   font-size: x-large;
@@ -196,7 +218,7 @@ body {
 .side-bar-category-button-special:hover {
   transform: scale(1.1);
   background-color: white;
-  color: #0059A6;
+  color: $color-marcas;
 }
 
 .sidebar {
@@ -472,7 +494,7 @@ body {
 
 /* ---------------------------------------------------- FOOTER ---------------------------------------------------- */
 .brand_link{
-  background-color: #0059A6;
+  background-color: $color-marcas;
   color: white;
   font-size: 2.2rem;
   font-weight: 900;
@@ -495,8 +517,8 @@ body {
 }
 
 .brand_link:hover{
-  border-color: #0059A6;
-  color: #0059A6;
+  border-color: $color-marcas;
+  color: $color-marcas;
   background-color: white;
   scale: 1;
 }
@@ -546,7 +568,7 @@ body {
 }
 
 .more_info_link:hover,.more_info_link2:hover{
-  color: #F57712;
+  color: $color-creadores;
 }
 
 /* ---------------------------------------------------- REWARD PAGE ---------------------------------------------------- */
@@ -562,7 +584,7 @@ body {
   font-size: 2rem;
   font-weight: 600;
   color: white;
-  background-color: #F57712;
+  background-color: $color-creadores;
   padding: 0.5rem 2rem;
   border-radius: 3rem;
   margin: 1rem;
@@ -602,7 +624,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   color: white;
-  background-color: #0059A6;
+  background-color: $color-marcas;
   padding: 0.5rem 2rem;
   border-radius: 3rem;
   margin-bottom: 1rem;

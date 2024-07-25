@@ -1,11 +1,11 @@
 "use client";
 import React, {useEffect, useState} from 'react';
-import Layout from '@/app/layout';
-import SidebarMenu from "@/app/SidebarMenu";
+import Layout from '@/app/UI/layout';
+import SidebarMenu from "@/app/UI/SidebarMenu";
 import {defaultLang, dictionary} from "@/content";
 import {useSearchParams } from "next/navigation";
 import { Suspense } from 'react';
-import SidebarMenuNotHome from "@/app/SidebarMenuNotHome";
+import SidebarMenuNotHome from "@/app/UI/SidebarMenuNotHome";
 
 export default function Home() {
     return (

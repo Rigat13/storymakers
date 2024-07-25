@@ -1,7 +1,7 @@
 "use client";
 
 import React, {useEffect, useRef, useState} from 'react';
-
+import {DataLoader} from '../dataLoaders/dataLoader';
 
 let isCooldown = false;
 let autoCarrouselDelay = 3500;
@@ -120,6 +120,11 @@ export  function Carrousel({reelsInput}) {
             )
         }
     }
+    return(
+        <div className="carousel" ref={carouselListRef}>
+        <ul className="carousel-list" ></ul>
+        </div>
+    )
 }    
     
 
@@ -128,27 +133,10 @@ export  function Carrousel({reelsInput}) {
 
 }
 
-export default function  CarrouselData(){
+export default function  CarrouselData(props){
+    var data = props.data
+    var reels = DataLoader(data);
 
-    var [reels,setReels] = useState([]);
-
-    useEffect(() => {
-       
-        fetch('./data/reels.json'
-         ,{
-             headers : { 
-               'Content-Type': 'application/json',
-               'Accept': 'application/json'
-              }
-           }
- 
-        ).then((res) => res.json())
-        .then((json) => {
-        setReels(json.reels);
-        
-       })
-     
-     })
      return(
 
        <Carrousel reelsInput={reels}/>

@@ -1,11 +1,20 @@
 "use client";
 import React, {useEffect, useState} from 'react';
 import Layout from './layout';
-import CarrouselData from './carrousel';
-import SidebarMenu from "@/app/SidebarMenu";
+import CarrouselData from './UI/carrousel';
+import SidebarMenu from "@/app/UI/SidebarMenu";
 import {defaultLang, dictionary} from "@/content";
 import {useSearchParams } from "next/navigation";
 import { Suspense } from 'react';
+import {DataLoader} from './dataLoaders/dataLoader';
+import ResponsiveAppBar from './UI/appBar';  //NAVEGADOR BARRA
+
+//MUI
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import IconButton from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Box, Button, Typography } from '@mui/material';
 
 export default function Home() {
     return (
@@ -34,55 +43,35 @@ function HomeContent() {
     }, []);
 
 
-   // NUEVO : ITERADOR DE DATOS ,LOS DATOS VIENEN DE UN JSON 
+   // DATOS DE MARCAS DESDE UN JSON, TODO: PASAR JSON AL SERVER
    type marcasData = { url:string ,card_front:string, card_back:string}
-    var [marcas,setMarcas] = useState([]);
-    useEffect(() => {
-       
-       fetch('./data/marcas.json'
-        ,{
-            headers : { 
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-             }
-          }
-
-       ).then((res) => res.json())
-       .then((json) => {
-       setMarcas(json.marcas);
-      })
-    
-    })
-    
-
-
+   var marcas = DataLoader('marcas');
+  
     return (
         <Layout>
             {/* |||||||||||||||||||||||||||||||||| BARRA XARXES |||||||||||||||||||||||||||||||||| */}
-            <div className="social-networks">
-                <button className="social-network-button">
-                    <a href="https://www.instagram.com/storymakers.es/" target="_blank">
-                        <img src="logo_instagram.png" alt="Instagram"/>
-                    </a>
-                </button>
-                {/*<button className="social-network-button">
-                    <a href="https://www.instagram.com/storymakers.es/" target="_blank">
-                        <img src="logo_tiktok.svg" alt="TikTok"/>
-                    </a>
-                </button>*/}
-                <button className="social-network-button">
-                    <a href="https://www.linkedin.com/company/stoymakers-es" target="_blank">
-                        <img src="logo_linkedin.png" alt="LinkedIn"/>
-                    </a>
-                </button>
-            </div>
+            {/*<div className="social-networks">
+               <div className='social-network-button' >
+                    <IconButton href="https://www.instagram.com/storymakers.es/"  variant="contained" 
+                    className=' bg-black max-w-1 mx-auto flex  rounded-xl hover:bg-white'>
+                    <InstagramIcon className='w-10 h-10 hover:fill-black'/>
+                    </IconButton>
+               </div>
+               <div className='social-network-button' >
+                    <IconButton href="https://www.linkedin.com/company/stoymakers-es"  variant="contained" 
+                    className=' bg-black max-w-1 mx-auto flex rounded-xl hover:bg-white'>
+                    <LinkedInIcon className='w-10 h-10 hover:fill-black'/>
+                    </IconButton>
+               </div>
+                
+            </div> */}
             {/* |||||||||||||||||||||||||||||||||| BARRA LATERAL |||||||||||||||||||||||||||||||||| */}
-
-            <button className="side-bar-button" onClick={toggleSidebar}>
-                <img src="logo-burger.svg" alt="Side bar" />
-            </button>
-            <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>
-
+           {/* <IconButton className="side-bar-button w-max-md mx-auto flex bg-black rounded-md hover:bg-white" 
+            variant="contained"   onClick={toggleSidebar}>
+            <MenuIcon className='fill-white bg-black h-16 w-16 hover:bg-white hover:fill-black'/>
+            </IconButton>
+            <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>*/}
+          
 
             <main className="flex flex-col items-center justify-center min-h-screen">
                 <div className="">
@@ -110,13 +99,16 @@ function HomeContent() {
                         <div className="">
                            {/*<Carrousel />*/} 
                            
-                           <CarrouselData/>
+                           <CarrouselData data={'reels'}/>
                         </div>
                     </div>
                 </div>
-                {/* |||||||||||||||||||||||||||||||||| REPTES |||||||||||||||||||||||||||||||||| */}
-                <h1 className="storymakers-header text-[#F57712]">{dictionary[lang]?.title_challenges}</h1>
-                <div className="banner-container bg-[url('../../public/orange-reel.png')]">
+                {/* |||||||||||||||||||||||||||||||||| REPTES ||||||||||||||||||||||||||||||||||
+                bg-[url('../../public/orange-reel.png')]
+                
+                */}
+                <Typography variant="h1" className="storymakers-header style-color-creadores font-sans">{dictionary[lang]?.title_challenges}</Typography>   
+                <Box className='banner-container max-w-100 mx-auto max-h-40 style-background-creadores'> 
                     <a href={"https://tally.so/r/wk6oN1"} target="_blank">
                         <div className="flip-card">
                             <div className="flip-card-inner">
@@ -126,12 +118,13 @@ function HomeContent() {
                             </div>
                         </div>
                     </a>
-                </div>
+                    </Box>
+               
                 {/* |||||||||||||||||||||||||||||||||| MARQUES |||||||||||||||||||||||||||||||||| */}
 
-
-                <h1 className="storymakers-header text-[#0059A6]">{dictionary[lang]?.title_brands}</h1>
-                <div className="banner-container bg-[url('../../public/blue-reel.png')]">
+                <Typography variant="h1" className="storymakers-header style-color-marcas  font-sans">{dictionary[lang]?.title_brands}</Typography>   
+                <div className='banner-container' >
+                <Box className='banner-container max-w-100 mx-auto max-h-40 style-background-marcas'>
                     <div className="banner-content">
                       { 
                       marcas.map( (marca:marcasData, i) => (
@@ -152,39 +145,21 @@ function HomeContent() {
                      
                       }      
 
-                       {/* 
-                        <a href={"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html"} target="_blank">
-                            <div className="flip-card">
-                                <div className="flip-card-inner">
-                                    <div className="flip-card-front bg-[url('../../public/vanguardia-business.png')]"></div>
-                                    <div className="flip-card-back bg-[url('../../public/tedx-back-card.png')]"></div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href={"https://tedxupfmataro.es/"} target="_blank">
-                            <div className="flip-card">
-                                <div className="flip-card-inner">
-                                    <div className="flip-card-front bg-[url('../../public/tedx-business.png')]"></div>
-                                    <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href={"https://nosense.es/"} target="_blank">
-                            <div className="flip-card">
-                                <div className="flip-card-inner">
-                                    <div className="flip-card-front bg-[url('../../public/nosense-business.png')]"></div>
-                                    <div className="flip-card-back bg-[url('../../public/storymakers-back-card.png')]"></div>
-                                </div>
-                            </div>
-                        </a>
-                        */} 
+                     
                     </div>
                     
-
+                </Box>
                 </div>
+               {/**  <Button variant="contained" style={{ textTransform: 'none'}} href="https://tally.so/r/mBG4E1" className='p-6 max-w-sm mx-auto rounded-[30px] items-center flex ' >
+                      <Typography variant="h3" className="font-sans italic font-bold" >
+                      {dictionary[lang]?.next_brand}
+                      </Typography>
+                </Button>*/}
+                
                 <a href="https://tally.so/r/mBG4E1" target="_blank">
                     <h1 className="brand_link">{dictionary[lang]?.next_brand}</h1>
-                </a>
+                </a>               
+                
                 <div data-behold-id="L6ni5jBOB5sAV4XLLBy1"></div>
 
                 <h1 className="more_info">{dictionary[lang]?.more_info}
