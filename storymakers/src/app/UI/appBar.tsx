@@ -19,9 +19,12 @@ import SmLogo from '../../../public/sm_logo.svg';
 const StoryMakersLogo = (props) => (
 <SvgIcon component={SmLogo} viewBox="0 0 800 800" width="700" height="700" {...props} />
 )
+//['Products', 'Pricing', 'Blog'];
 
-
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = [{"tab":"Products", "href":"/products"},
+              {"tab":"Retos", "href":"/retos"},
+              {"tab":"About", "href":"/about"},
+              {"tab":"Blog", "href":"/blog"}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -69,7 +72,10 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>          
           */}
-          <StoryMakersLogo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}/>
+         
+          <IconButton href="/">
+          <StoryMakersLogo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          </IconButton>
         
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -102,10 +108,10 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 
-                <MenuItem  key={page} onClick={handleCloseNavMenu}>
+                <MenuItem  key={page.tab} onClick={handleCloseNavMenu}>
                   <Typography  textAlign="center">
                     
-                    {page}
+                    {page.tab}
                     </Typography>
                 </MenuItem>
               ))}
@@ -134,12 +140,12 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.tab}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                href="/about"  // ROUTING ABOUT
+                href={page.href}  // ROUTING ABOUT
               >
-                {page}
+                {page.tab}
               </Button>
             ))}
           </Box>

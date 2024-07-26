@@ -7,6 +7,8 @@ import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import ResponsiveAppBar from './UI/appBar';
 
+import { GoogleAnalytics,GoogleTagManager } from '@next/third-parties/google'
+
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -31,10 +33,14 @@ export default function RootLayout({
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <html lang="ca">
+            <GoogleTagManager gtmId='GTM-N2K7KHR9' />
             <body className={`${montserrat.className}`}>
-            <ResponsiveAppBar/>
-              {children}
+              <main>
+                  <ResponsiveAppBar/> 
+                  {children}
+              </main>
               </body>
+              <GoogleAnalytics gaId="G-T4QXHX3Y73" />
             </html>
         </>
     );

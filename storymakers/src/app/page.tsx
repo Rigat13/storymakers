@@ -48,31 +48,7 @@ function HomeContent() {
    var marcas = DataLoader('marcas');
   
     return (
-        <Layout>
-            {/* |||||||||||||||||||||||||||||||||| BARRA XARXES |||||||||||||||||||||||||||||||||| */}
-            {/*<div className="social-networks">
-               <div className='social-network-button' >
-                    <IconButton href="https://www.instagram.com/storymakers.es/"  variant="contained" 
-                    className=' bg-black max-w-1 mx-auto flex  rounded-xl hover:bg-white'>
-                    <InstagramIcon className='w-10 h-10 hover:fill-black'/>
-                    </IconButton>
-               </div>
-               <div className='social-network-button' >
-                    <IconButton href="https://www.linkedin.com/company/stoymakers-es"  variant="contained" 
-                    className=' bg-black max-w-1 mx-auto flex rounded-xl hover:bg-white'>
-                    <LinkedInIcon className='w-10 h-10 hover:fill-black'/>
-                    </IconButton>
-               </div>
-                
-            </div> */}
-            {/* |||||||||||||||||||||||||||||||||| BARRA LATERAL |||||||||||||||||||||||||||||||||| */}
-           {/* <IconButton className="side-bar-button w-max-md mx-auto flex bg-black rounded-md hover:bg-white" 
-            variant="contained"   onClick={toggleSidebar}>
-            <MenuIcon className='fill-white bg-black h-16 w-16 hover:bg-white hover:fill-black'/>
-            </IconButton>
-            <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>*/}
-          
-
+       
             <main className="flex flex-col items-center justify-center min-h-screen">
                 <div className="">
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
@@ -166,6 +142,35 @@ function HomeContent() {
                     <a className="more_info_link" href="https://www.instagram.com/storymakers.es/" target="_blank">@storymakers.es</a>
                 </h1>
             </main>
-        </Layout>
+      
     );
 }
+
+
+
+
+
+
+            {/* |||||||||||||||||||||||||||||||||| BARRA XARXES |||||||||||||||||||||||||||||||||| */}
+            {/*<div className="social-networks">
+               <div className='social-network-button' >
+                    <IconButton href="https://www.instagram.com/storymakers.es/"  variant="contained" 
+                    className=' bg-black max-w-1 mx-auto flex  rounded-xl hover:bg-white'>
+                    <InstagramIcon className='w-10 h-10 hover:fill-black'/>
+                    </IconButton>
+               </div>
+               <div className='social-network-button' >
+                    <IconButton href="https://www.linkedin.com/company/stoymakers-es"  variant="contained" 
+                    className=' bg-black max-w-1 mx-auto flex rounded-xl hover:bg-white'>
+                    <LinkedInIcon className='w-10 h-10 hover:fill-black'/>
+                    </IconButton>
+               </div>
+                
+            </div> */}
+            {/* |||||||||||||||||||||||||||||||||| BARRA LATERAL |||||||||||||||||||||||||||||||||| */}
+           {/* <IconButton className="side-bar-button w-max-md mx-auto flex bg-black rounded-md hover:bg-white" 
+            variant="contained"   onClick={toggleSidebar}>
+            <MenuIcon className='fill-white bg-black h-16 w-16 hover:bg-white hover:fill-black'/>
+            </IconButton>
+            <SidebarMenu  isOpen={isSidebarOpen} onClose={toggleSidebar} lang={lang}/>*/}
+          
