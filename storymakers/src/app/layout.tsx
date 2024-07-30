@@ -4,6 +4,8 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 
+import { GoogleAnalytics,GoogleTagManager } from '@next/third-parties/google'
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 
@@ -26,7 +28,9 @@ export default function RootLayout({
             </Head>
 
             <html lang="ca">
+            <GoogleTagManager gtmId='GTM-N2K7KHR9' /> {/*GTM */}
             <body className={montserrat.className}>{children}</body>
+            <GoogleAnalytics gaId="G-T4QXHX3Y73" />  {/*GA */}
             </html>
         </>
     );

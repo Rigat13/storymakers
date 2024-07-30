@@ -7,6 +7,8 @@ import {defaultLang, dictionary} from "@/content";
 import {useSearchParams } from "next/navigation";
 import { Suspense } from 'react';
 
+import { sendGTMEvent } from '@next/third-parties/google'
+
 export default function Home() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
@@ -127,7 +129,7 @@ function HomeContent() {
                     </div>
 
                 </div>
-                <a href="https://tally.so/r/mBG4E1" target="_blank">
+                <a href="https://tally.so/r/mBG4E1" target="_blank" onClick={() => sendGTMEvent({event: 'gtm.linkClick',siguiente:'marca'})}>
                     <h1 className="brand_link">{dictionary[lang]?.next_brand}</h1>
                 </a>
                 <div data-behold-id="L6ni5jBOB5sAV4XLLBy1"></div>
