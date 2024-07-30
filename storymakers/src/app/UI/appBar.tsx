@@ -13,18 +13,27 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { SvgIcon } from '@mui/material';
+import {ListItem}from '@mui/material';
+import {Divider}from '@mui/material';
+import LogoLargo from '../../../public/logo_largo.svg';
 
-import SmLogo from '../../../public/sm_logo.svg';
+import { sendGTMEvent } from '@next/third-parties/google'
+
+/*import SmLogo from '../../../public/sm_logo.svg';
+const StoryMakersLogo = (props) => (
+  <SvgIcon component={SmLogo} viewBox="0 0 800 800" width="700" height="700" {...props} />
+  )
+*/
 
 const StoryMakersLogo = (props) => (
-<SvgIcon component={SmLogo} viewBox="0 0 800 800" width="700" height="700" {...props} />
+<SvgIcon component={LogoLargo} viewBox="0 0 315 50" {...props} />
 )
 //['Products', 'Pricing', 'Blog'];
 
-const pages = [{"tab":"Products", "href":"/products"},
-              {"tab":"Retos", "href":"/retos"},
-              {"tab":"About", "href":"/about"},
-              {"tab":"Blog", "href":"/blog"}];
+const pages = [{"tab":"Conócenos", "href":"/about"},  
+               {"tab":"Retos", "href":"/retos"},
+              {"tab":"Actualidad", "href":"/blog"},
+              {"tab":"Contacto", "href":"/contact"}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -50,8 +59,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="static" >
+      <Container maxWidth="xl" className='bg-[#D9D9D9]'>
         <Toolbar disableGutters>
           {/*<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
             <Typography
@@ -72,12 +81,15 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>          
           */}
-         
+ 
           <IconButton href="/">
-          <StoryMakersLogo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <StoryMakersLogo 
+          sx={{ display: { xs: 'none', md: 'flex',height: 'inherit',width:'60mm' }, mr: 1 }} />
           </IconButton>
+         
         
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/* MOVIL MENU */}
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -104,8 +116,8 @@ function ResponsiveAppBar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
-              }}
-            >
+              }} 
+            > 
               {pages.map((page) => (
                 
                 <MenuItem  key={page.tab} onClick={handleCloseNavMenu}>
@@ -117,8 +129,9 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-         <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          
+
+                                          
+         <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> 
           <Typography
             variant="h5"
             noWrap
@@ -137,19 +150,45 @@ function ResponsiveAppBar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {/* MOVIL MENU ^ */}
+
+           {/* PC MENU */}
+           <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+          </Typography>
+
+          <Box sx={{  display: { xs: 'none', sm:'block',padding: '6px 46px',} }}>         
+          
             {pages.map((page) => (
               <Button
                 key={page.tab}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-                href={page.href}  // ROUTING ABOUT
+                sx={{ color: 'black' , textTransform: 'none', fontWeight:"bold" }}
+                href={page.href}  // ROUTING SECTIONS
+                
               >
                 {page.tab}
-              </Button>
+                
+              </Button >
             ))}
           </Box>
 
+          <Button variant="contained" className='bg-black hover:bg-[#262728]'
+          sx={{
+              boxShadow:"none",
+              textTransform: 'none',
+
+          }}
+          
+          onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
+          >
+            Iniciar Sesión
+            </Button>  
+
+         {/*   
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -179,6 +218,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+          */} 
         </Toolbar>
       </Container>
     </AppBar>
