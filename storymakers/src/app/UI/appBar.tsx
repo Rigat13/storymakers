@@ -165,7 +165,7 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page.tab}
-                onClick={handleCloseNavMenu}
+                onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
                 sx={{ color: 'black' , textTransform: 'none', fontWeight:"bold" }}
                 href={page.href}  // ROUTING SECTIONS
                 
