@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 $primary-color:white;
+$secondary-color:#222321;
 $color-text-sidebar:white;
 $color-creadores:#F57712;
 $color-marcas:#0059A6;
@@ -36,6 +37,43 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+.desc-layout-blue{
+  position: fixed;
+  width:100%;//1177.54px;
+  height:100%;//1611.56px;
+  left:-20%; //-161.99px;
+  top:10%; //2651.24px;
+  
+  background: linear-gradient(219.66deg, rgba(57, 135, 255, 0.5) 77.33%, rgba(0, 0, 0, 0) 77.34%);
+  filter: blur(300px);
+  transform: rotate(-113.26deg);
+  z-index:-1;
+
+}
+
+.desc-layout{
+  position:absolute;
+  width:100%;
+  height:1000px;
+  background: linear-gradient(-45deg, rgba(239, 122, 23, 0.5) 50%,rgba(57, 135, 255, 0.5) 50%);
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.desc-layout-orange{
+position: fixed;
+width:90%; //1134.14px;
+height:100%; //1552.16px;
+left: 30%;//-20.66px;
+top:40%; //1524.19px;
+
+background: linear-gradient(219.66deg, rgba(239, 122, 23, 0.5) 77.33%, rgba(0, 0, 0, 0) 77.34%);
+filter: blur(300px);
+transform: rotate(-104.43deg);
+z-index:-1;
+}
+
 .storymakers-header {
   font-size: 3.75rem; /* Corresponds to Tailwind text-6xl (6xl = 6 * 0.625rem = 3.75rem) */
   font-weight: 750; /* Corresponds to Tailwind font-bold */
@@ -61,11 +99,14 @@ body {
   background-color: $color-creadores;
 }
 
+
+
 .central-logo{
   height: 20rem;
   margin-top: 10rem;
   margin-bottom: 7rem;
 }
+
 
 /* ---------------------------------------------------- FOREGROUND ---------------------------------------------------- */
 
@@ -73,7 +114,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url("../../public/foreground.png");
+  //background-image: url("../../public/foreground.png");
   background-repeat: no-repeat; /* Prevent horizontal repetition */
   background-size: cover; /* Ensure vertical fit */
   z-index: 999; /* Ensure it's above other content */
@@ -86,7 +127,7 @@ body {
   bottom: 0;
   width: 470px;
   height: 260px;
-  background-image: url("../../public/footer.png");
+ // background-image: url("../../public/footer.png");
   z-index: 1000; /* Ensure it's above other content */
   pointer-events: none; /* Make it non-interactable */
 }
@@ -300,12 +341,13 @@ body {
   opacity: 1; /* Show on hover */
 }
 /* Adjust the background images for hover effect */
+/*
 .button-with-hover:nth-child(1) .hover-image {
   background-image: url("../../public/button-hover-business-ca.png");
 }
 .button-with-hover:nth-child(2) .hover-image {
   background-image: url("../../public/button-hover-user-ca.png");
-}
+}*/
 /* ---------- es ---------- */
 .button-with-hover-es {
   position: relative;
@@ -313,12 +355,13 @@ body {
 .button-with-hover-es:hover .hover-image {
   opacity: 1; /* Show on hover */
 }
+/*
 .button-with-hover-es:nth-child(1) .hover-image {
   background-image: url("../../public/button-hover-business-es.png");
 }
 .button-with-hover-es:nth-child(2) .hover-image {
   background-image: url("../../public/button-hover-user-es.png");
-}
+}*/
 /* ---------- en ---------- */
 .button-with-hover-en {
   position: relative;
@@ -326,12 +369,12 @@ body {
 .button-with-hover-en:hover .hover-image {
   opacity: 1; /* Show on hover */
 }
-.button-with-hover-en:nth-child(1) .hover-image {
+/*.button-with-hover-en:nth-child(1) .hover-image {
   background-image: url("../../public/button-hover-business-en.png");
 }
 .button-with-hover-en:nth-child(2) .hover-image {
   background-image: url("../../public/button-hover-user-en.png");
-}
+}*/
 /* ---------------------------------------------------- BANNER ---------------------------------------------------- */
 
 .banner-container {
@@ -367,11 +410,14 @@ body {
 
 .flip-card {
   background-color: transparent;
-  width: 14rem;
-  min-width: 14rem;
-  height: 14rem;
+  width: 6rem;
+  height: 6rem;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  margin: 1rem;
+  @media (min-width: 600px){  /* PARA PANTALLAS GRANDES*/
+    width:14rem;
+    height:14rem;
+    margin: 1rem;
+   }  
 }
 
 /* This container is needed to position the front and back side */
@@ -387,6 +433,7 @@ body {
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotate3d(0, 1, 0, -180deg);
+  
 }
 
 /* Position the front and back side */
@@ -397,7 +444,10 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-  border-radius: 40px;
+  border-radius: 20px;
+  @media (min-width: 600px){  /* PARA PANTALLAS GRANDES*/
+     border-radius: 40px;
+   }  
 }
 
 /* Style the front side (fallback if image is missing) */
@@ -653,6 +703,11 @@ body {
 
 .footer-text{
   margin: 1rem;
+}
+
+/*-----------------------------------------------------FOOTER-------------------------------------------------------*/
+.footer-color{
+  background-color: $secondary-color;
 }
 
 /* ---------------------------------------------------- MOBILE ---------------------------------------------------- */

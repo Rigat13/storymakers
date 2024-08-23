@@ -1,15 +1,15 @@
 "use client"
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Descripcion from "./descripcion";
-import DashboardLayout from "./DescLayout";
+import RetosGaleria from "./retosGaleria";
+import RetosCollapse from "./collapse";
 
-export default function About() {
+export default function Retos() {
     const Item = styled(Paper)(({ theme }) => ({
-        backgroundColor: "lightgray",
+        backgroundColor: 'lightgrey',
         ...theme.typography.body2,
         padding: theme.spacing(1),
         textAlign: 'center',
@@ -18,25 +18,24 @@ export default function About() {
         fontWeight:'bold'
       }));
     return(
-        <Typography variant="body1" component="div" >
+      
+        <Typography variant="body1" component="div" className="bg-white">
         <Container maxWidth='xl' >
        <Grid container spacing={2} sx={{p:1}} direction='column'>
         <Grid item xs>
+       
         <Item >INFO</Item>
+      
         </Grid>
-
+       
+        <Grid item xs>
+        <RetosCollapse/>
+        </Grid>
         
-
        </Grid>
        </Container>
-       
-       <DashboardLayout>
-      <Descripcion/>
-      </DashboardLayout>
 
        </Typography>
     
    ) 
   }
-
-

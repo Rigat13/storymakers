@@ -2,18 +2,18 @@
   "data":[
 
     {"url":"https://www.lavanguardia.com/economia/innovacion/20240408/9590083/tedxupfmataro-busca-inspirar-jovenes-universitarios-empresas-e-startups-septima-edicion-tecnocampus-brl.html",
-      "card_front" :"vanguardia-business.png" ,
-      "card_back": "tedx-back-card.png"
+      "card_front" :"tedx/vanguardia-business.png" ,
+      "card_back": "tedx/tedx-back-card.png"
 }
     ,
     {"url":"https://tedxupfmataro.es/",
-     "card_front" :"tedx-business.png" ,
-     "card_back": "storymakers-back-card.png"
+     "card_front" :"tedx/tedx-business.png" ,
+     "card_back": "tedx/storymakers-back-card.png"
 }
     ,
     {"url":"https://nosense.es/",
-     "card_front" :"nosense-business.png" ,
-     "card_back": "storymakers-back-card.png"}
+     "card_front" :"tedx/nosense-business.png" ,
+     "card_back": "tedx/storymakers-back-card.png"}
 ]
 
 

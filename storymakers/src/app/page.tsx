@@ -7,7 +7,6 @@ import {defaultLang, dictionary} from "@/content";
 import {useSearchParams } from "next/navigation";
 import { Suspense } from 'react';
 import {DataLoader} from './dataLoaders/dataLoader';
-import ResponsiveAppBar from './UI/appBar';  //NAVEGADOR BARRA
 
 //MUI
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -15,6 +14,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import IconButton from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Button, Typography } from '@mui/material';
+
 
 export default function Home() {
     return (
@@ -49,11 +49,11 @@ function HomeContent() {
   
     return (
        
-            <main className="flex flex-col items-center justify-center min-h-screen">
-                <div className="">
+            <div className="flex flex-col items-center justify-center min-h-screen">
+               
                     {/* |||||||||||||||||||||||||||||||||| LOGOS/BOTONS |||||||||||||||||||||||||||||||||| */}
                     {/*   <div className="w-1/2 p-4 mr-20">
-                        <img src="logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
+                        <img src="logos/logo-storymakers.png" alt="Logotip - Storymakers" className="mb-10"/>
                         <img src="tagline-ca.png" alt="Logotip - Storymakers" className="mb-10"/>
                         <div className="flex justify-center">
                             <a href="#" className="button-with-hover">
@@ -66,9 +66,9 @@ function HomeContent() {
                             </a>
                         </div>
                     </div>*/}
-                </div>
+              
                     {/* |||||||||||||||||||||||||||||||||| INSTAGRAM |||||||||||||||||||||||||||||||||| */}
-                <img className="central-logo" src="logo-storymakers.png" alt="Logotip - Storymakers"/>
+                <img className="central-logo" src="logos/logo-storymakers.png" alt="Logotip - Storymakers"/>
                     {/* |||||||||||||||||||||||||||||||||| GALERIA |||||||||||||||||||||||||||||||||| */}
                 <div className="m-10">
                     <div className="">
@@ -79,18 +79,15 @@ function HomeContent() {
                         </div>
                     </div>
                 </div>
-                {/* |||||||||||||||||||||||||||||||||| REPTES ||||||||||||||||||||||||||||||||||
-                bg-[url('../../public/orange-reel.png')]
-                
-                */}
+                {/* |||||||||||||||||||||||||||||||||| REPTES ||||||||||||||||||||||||||||||||||  */}
                 <Typography variant="h1" className="storymakers-header style-color-creadores font-sans">{dictionary[lang]?.title_challenges}</Typography>   
                 <Box className='banner-container max-w-100 mx-auto max-h-40 style-background-creadores'> 
                     <a href={"https://tally.so/r/wk6oN1"} target="_blank">
                         <div className="flip-card">
                             <div className="flip-card-inner">
-                                <div className="flip-card-front bg-[url('../../public/tedx2024-challenge.png')]"></div>
+                                <div className="flip-card-front bg-[url('../../public/tedx/tedx2024-challenge.png')]"></div>
                                 <div
-                                    className="flip-card-back bg-[url('../../public/tedx2024-challenge-rewards-ca.png')]"></div>
+                                    className="flip-card-back bg-[url('../../public/tedx/tedx2024-challenge-rewards-ca.png')]"></div>
                             </div>
                         </div>
                     </a>
@@ -141,7 +138,9 @@ function HomeContent() {
                 <h1 className="more_info">{dictionary[lang]?.more_info}
                     <a className="more_info_link" href="https://www.instagram.com/storymakers.es/" target="_blank">@storymakers.es</a>
                 </h1>
-            </main>
+
+                
+            </div>
       
     );
 }

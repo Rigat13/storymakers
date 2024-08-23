@@ -15,25 +15,29 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { SvgIcon } from '@mui/material';
 import {ListItem}from '@mui/material';
 import {Divider}from '@mui/material';
-import LogoLargo from '../../../public/logo_largo.svg';
+import {StoryMakersLogoBlack} from './svgComponent';
 
+import { styled } from '@mui/material/styles';
+import  { ButtonProps } from '@mui/material/Button';
+import { purple } from '@mui/material/colors';
+import { createTheme,ThemeProvider } from '@mui/material/styles';
+//GTM
 import { sendGTMEvent } from '@next/third-parties/google'
 
-/*import SmLogo from '../../../public/sm_logo.svg';
-const StoryMakersLogo = (props) => (
-  <SvgIcon component={SmLogo} viewBox="0 0 800 800" width="700" height="700" {...props} />
-  )
-*/
 
-const StoryMakersLogo = (props) => (
-<SvgIcon component={LogoLargo} viewBox="0 0 315 50" {...props} />
-)
-//['Products', 'Pricing', 'Blog'];
+const theme = createTheme({
+  palette: {
+      primary: purple,
+      secondary: purple,
+  },
+});
 
-const pages = [{"tab":"Conócenos", "href":"/about"},  
-               {"tab":"Retos", "href":"/retos"},
-              {"tab":"Actualidad", "href":"/blog"},
-              {"tab":"Contacto", "href":"/contact"}];
+//{"tab":"LANDING EN CONSTRUCCIÓN", "href":"/landing","color":'blue'}, 
+const pages = [
+              {"tab":"Conócenos", "href":"/about","color":'black'},  
+               {"tab":"Retos", "href":"/retos","color":'black'},
+              {"tab":"Actualidad", "href":"/blog","color":'black'},
+              {"tab":"Contacto", "href":"/contact","color":'black'}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -83,7 +87,7 @@ function ResponsiveAppBar() {
           */}
  
           <IconButton href="/">
-          <StoryMakersLogo 
+          <StoryMakersLogoBlack
           sx={{ display: { xs: 'none', md: 'flex',height: 'inherit',width:'60mm' }, mr: 1 }} />
           </IconButton>
          
@@ -130,7 +134,11 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
 
-                                          
+          <IconButton href="/">
+          <StoryMakersLogoBlack
+          sx={{ display: {  xs: 'flex', md: 'none',height: 'inherit',width:'50mm' }, mr: 1 }} />
+          </IconButton>
+         {/** 
          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> 
           <Typography
             variant="h5"
@@ -150,6 +158,7 @@ function ResponsiveAppBar() {
           >
             LOGO
           </Typography>
+          */}
           {/* MOVIL MENU ^ */}
 
            {/* PC MENU */}
@@ -166,7 +175,10 @@ function ResponsiveAppBar() {
               <Button
                 key={page.tab}
                 onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
-                sx={{ color: 'black' , textTransform: 'none', fontWeight:"bold" }}
+               
+                sx={{ textTransform: 'none', fontWeight:"bold" ,
+                  color:`${page.color}`
+                }}
                 href={page.href}  // ROUTING SECTIONS
                 
               >
@@ -176,18 +188,17 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Button variant="contained" className='bg-black hover:bg-[#262728]'
-          sx={{
+                 
+            <Button variant="contained"  role={undefined} 
+            sx={{backgroundColor:'#000000!important',
               boxShadow:"none",
               textTransform: 'none',
-
-          }}
-          
-          onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
-          >
-            Iniciar Sesión
-            </Button>  
-
+            
+            }}
+           
+               onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
+            > Iniciar sesion</Button>
+         
          {/*   
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
