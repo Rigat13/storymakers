@@ -1,3 +1,4 @@
+"use client";
 
 import { Box,Typography } from "@mui/material";
 import Container from '@mui/material/Container';
@@ -5,23 +6,14 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
-
+import Button from '@mui/material/Button';
 import { StoryMakersLogoWhite } from "./svgComponent";
 import { DivisorFooterSVG } from "./svgComponent";
+import { sendGTMEvent } from '@next/third-parties/google'
+import { useTranslations } from "next-intl";
+import {Link} from '../../navigation';
 
-export default function AppFooter(){
-
-    /**
-      <Grid container item spacing={4}>
-               <Grid item xs >
-                   <svg width='auto' height="70" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="2000" height="5" x="10" y="10"  fill="white" />
-                   </svg>
-                   </Grid>
-                   
-               </Grid>
-      
-     */
+export default function AppFooter({pages}){
 
        const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -33,6 +25,8 @@ export default function AppFooter(){
         fontWeight:'bold'
       }));
 
+      const t = useTranslations('appBar');  
+      const t_footer = useTranslations('appFooter');  
     return(
 
            <Typography variant="body1" component="footer"  sx={{display:"flex"}} className="footer-color" >
@@ -67,12 +61,32 @@ export default function AppFooter(){
                     <StoryMakersLogoWhite sx={{display:{ width: '100%',height:'auto' }}}   />
                     <p style={{fontSize:'small',color:'white'}}>hola@storymakers.com</p>
                     </Grid>
-                     <Grid item xs>
-
+                    
+                    <Grid item container xs direction="column" alignItems="flex-end">
+                    
+                    { pages.map((page,i)=>(
+                      <Grid item xs key={i}>
+                       <Button
+                       key={page.tab}
+                       onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
+                      
+                       sx={{ textTransform: 'none', fontWeight:"bold" ,
+                         color:"white", textAlign:"right"
+                       }}
+                       // ROUTING SECTIONS
+                       
+                     >
+                   <Link  href={page.href}  >
+                       {t(page.tab)}
+                   </Link>
+                     </Button >
                      </Grid>
-                    <Grid item xs>
-                    <Item>INFO DERECHA</Item>
+                    ))
+
+                    }                   
+                    
                     </Grid>
+
                 </Grid>
                 
                 </Container>
@@ -89,8 +103,8 @@ export default function AppFooter(){
                         </Grid>
                         <Grid item xs={4} sx={{alignItems:'center'}} >
                        
-                        <Typography component='h6' sx={{color:'white',  textAlign: 'center',}}>
-                              Storymakers.All rights reserved.
+                        <Typography component='h6' variant="caption" sx={{ textAlign: 'center',color: "#C5C5C4"}}>
+                            2024, Storymakers.{t_footer('derechos_reservados')}
                             </Typography>
                        
                        </Grid>
@@ -102,8 +116,6 @@ export default function AppFooter(){
                
                 </Box>
 
-                
-         
                 </Box>
                 </Typography>
 

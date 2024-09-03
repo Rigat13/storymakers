@@ -1,6 +1,4 @@
 import { SvgIcon } from '@mui/material';
-
-
 //logos
 import LogoJuntoOscuro from '../../../public/logos/recurso_5.svg';
 import LogoJuntoBlanco from '../../../public/logos/recurso_11.svg';
@@ -8,15 +6,12 @@ import StoryLogo from '../../../public/logos/story.svg';
 import MakersLogo from '../../../public/logos/makers.svg';
 //elementos
 import divisorFooter from '../../../public/elementos/divisorFooter.svg';
-//import ellipse from '../../../public/elementos/ellipse.svg';
-//import ellipseOrange from '../../../public/elementos/ellipseOrange.svg';
+import bloque from '../../../public/elementos/bloque.svg';
 
 // LOGOS 
 export const StoryMakersLogoBlack = (props) => (
   <SvgIcon component={LogoJuntoOscuro} viewBox="0 0 3422 564" {...props} />
   )
-
-  
 
 export const StoryMakersLogoWhite = (props) => (
   <SvgIcon component={LogoJuntoBlanco} viewBox="0 0 3422 564" {...props} />
@@ -39,20 +34,9 @@ export const DivisorFooterSVG = (props) => (
   <SvgIcon component={divisorFooter} viewBox="0 0 1440 42"  {...props} />
 )
 
-
-/*
-export const Ellipse = (props) => (
-
-  <SvgIcon component={ellipse} viewBox="0 0 1440 2456"  {...props} />
+export const BloqueSVG = (props) => (
+  <SvgIcon component={bloque} viewBox="0 0 250 13"  {...props} />
 )
-
-
-export const EllipseOrange = (props) => (
-
-  <SvgIcon component={ellipseOrange} viewBox="0 0 1040 1000"   {...props} />
-)
-
-*/
 
 /*
 import LogoLargo from '../../../public/logos/logo_largo.svg';

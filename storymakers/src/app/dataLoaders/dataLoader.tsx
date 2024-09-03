@@ -3,11 +3,10 @@ import React, {useEffect, useState} from 'react';
 
 export function DataLoader(data){
 
-    var data = data
     var [newData,setData] = useState([]);
     useEffect(() => {
        
-       fetch(`./data/${data}.json`
+       fetch(`../data/${data}.json`
         ,{
             headers : { 
               'Content-Type': 'application/json',

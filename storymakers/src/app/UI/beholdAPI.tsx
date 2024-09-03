@@ -76,9 +76,7 @@ export default function InstaGallery({ feedId }: { feedId: string }) {
       )
     }
 
-    return (
-     mediaEl
-    )
+    return ( mediaEl )
   })
 
   
@@ -89,9 +87,9 @@ export default function InstaGallery({ feedId }: { feedId: string }) {
 
       {/* QUITAR LAS OTRAS LISTAS DE ABAJO CUANDO HAYA MAS CONTENIDO */}
   
-                { postEls.map((item) => (
+                { postEls.map((item,i) => (
                        
-                        <ImageListItem >
+                        <ImageListItem key={i}>
                         {item}
                         </ImageListItem>
                         
@@ -104,9 +102,9 @@ export default function InstaGallery({ feedId }: { feedId: string }) {
 
       {/*  LISTAS DE EJEMPLO */}
 
-                { postEls.map((item) => (
+                { postEls.map((item,i) => (
                        
-                        <ImageListItem >
+                        <ImageListItem key={i}>
                         {item}
                         </ImageListItem>
                         

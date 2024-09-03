@@ -1,0 +1,35 @@
+{
+   
+    "appBar":{
+        "about": "About us",
+        "retos":"Challenges",
+        "blog":"Blog",
+        "contacto":"Contact",
+        "iniciar_sesion":"Sign in"
+    },
+    "appFooter":{
+      "derechos_reservados":"All rights reserved."
+    },
+    "landing":{
+      "start_button":"Shall we start?",
+      "reconocimiento":"Award",
+      "paso_anterior":"Previous",
+      "paso_siguiente":"Next",
+      "paso":"Step",
+      "contrata_subscripcion":"Buy your subscription"
+    },
+
+    "retos":{
+      "requisitos":"Requirements",
+      "dificultad":" Difficulty",
+      "recompensa":"Reward",
+      "unirse":"Join the challenge",
+      "participar":"Participate",
+      "busca_retos":"Search challenges..."
+    },
+
+    "about":{ 
+      "story_description": "STORY english version here" ,
+      "makers_description": " MAKERS english version here" 
+    }
+  }

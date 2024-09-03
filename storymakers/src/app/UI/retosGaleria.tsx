@@ -11,32 +11,37 @@ import Container from '@mui/material/Container';
 import { Grid } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import SurfingIcon from '@mui/icons-material/Surfing';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import StarIcon from '@mui/icons-material/Star';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Rating from '@mui/material/Rating';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
+
+//icons
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import SurfingIcon from '@mui/icons-material/Surfing';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 import SearchIcon from '@mui/icons-material/Search';
 
-export function SearchBarGallery(props) {
-     
+import { useTranslations } from 'next-intl';
+
+
+export function SearchBarGallery() {
+     const t = useTranslations('retos')
         return (
           <Paper
             component="form"
             sx={{ p: '2px 4px', display: 'flex', alignItems: 'center',maxWidth:'100%'
-              , height:40,borderRadius:20, }}
+              , height:40,borderRadius:20, width:{xs:'60%',md:'auto'}}}
              
           >
             <InputBase
               sx={{ ml: 1, flex: 1 }}
-              placeholder="Busca retos"
+              placeholder={t('busca_retos')}
               inputProps={{ 'aria-label': 'busca retos' }}
             />
             <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
@@ -47,20 +52,18 @@ export function SearchBarGallery(props) {
       }
 
       
- function GaleriaTab(props){
+function GaleriaTab(props){
+     const t = useTranslations('retos');
 
      let numRetos= props.num
      let retos = props.retos
      let checked = props.checked
-        /*   ABAJO DE TODO VERSION CON GRID
-        <Grid container sx={{ maxWidth:'100%', height: 450, }} columns={{xs:2,sm:4,md:5}} >
-        */
-       return(
-        
-         <ImageList cols={checked? 2 : 5} rowHeight={164}>
+        /*   ABAJO DE TODO VERSION CON GRID*/
+    return(
+         <ImageList cols={checked? 2 : 5} rowHeight={164} sx={{width:{xs:'90%',md:'100%'} }}>
   {retos.map((item) => (
-    <ImageListItem key={item.reto.img} onClick={()=>props.onChange(item.id)} 
-    sx={{p:2}}
+    <ImageListItem key={item.reto.img} onClick={()=>props.onChange(item.id)} //ABRE O CIERRA INFO LATERAL DEL RETO
+    sx={{p:2, width:{xs:150,md:'100%'} }}
     >
       <img
         srcSet={`${item.reto.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -75,7 +78,7 @@ export function SearchBarGallery(props) {
        <Typography variant='caption' component="div" noWrap >{item.reto.info_marca}</Typography> 
         <Button variant="contained"  sx={{textTransform: 'none', mt:1,
         backgroundColor:'#F0A362!important',  
-      }} > Participar </Button>
+      }} > {t('participar')}</Button>
       </Typography>}
       
       sx={{height:'90%',width:'81%',ml:2,
@@ -87,14 +90,14 @@ export function SearchBarGallery(props) {
     </ImageListItem>
   ))}
 
-
+{/*  ARRAY DE PRUEBA SEGUN NUMERO DE RETOS */}
 {   [...Array(numRetos)].map((i) =>(
-                <ImageListItem key={i} onClick={()=>props.onChange(0)} sx={{p:2}} >
+                <ImageListItem key={i} onClick={()=>props.onChange(0)} sx={{p:2 ,width:{xs:150,md:'100%'}}} >
      
              
              <img
-        srcSet={`${"tedx/vanguardia-business.png"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-        src={`${"tedx/vanguardia-business.png"}?w=164&h=164&fit=crop&auto=format`}
+        srcSet={`${"../tedx/vanguardia-business.png"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+        src={`${"../tedx/vanguardia-business.png"}?w=164&h=164&fit=crop&auto=format`}
         alt={"reto de prueba"}
         loading="lazy"
         style={{borderRadius:20}}
@@ -105,7 +108,7 @@ export function SearchBarGallery(props) {
        <Typography variant='caption' component="div" noWrap >El reto consiste en</Typography> 
         <Button variant="contained"  sx={{textTransform: 'none', mt:1,
         backgroundColor:'#F0A362!important',  
-      }} > Participar </Button>
+      }} >{t('participar')}  </Button>
       </Typography>}
       
       sx={{height:'90%',width:'81%',ml:2,
@@ -196,7 +199,6 @@ export default function RetosGaleria(props) {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-      //borderColor: 'blue', backgroundColor:'blue', borderRadius:80,
         sx={{pt:4,
          '& .MuiTabs-indicator': {
             display: 'flex',
@@ -223,15 +225,17 @@ export default function RetosGaleria(props) {
        <GaleriaTab num={5}  onChange={props.onChange} retos={props.data} checked={props.checked}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <GaleriaTab num={2} onChange={props.onChange} retos={props.data} checked={props.checked}/>
+      <GaleriaTab num={0} onChange={props.onChange} retos={props.data} checked={props.checked}/>
+     {/** <GalleryTabGrid num={0} retos={props.data} /> */}
       </TabPanel>
       <TabPanel value={value} index={2}>
+
         <Grid container direction={'column'}>
           <Grid item md>
-        <SearchBarGallery checked={props.checked}/>
+        <SearchBarGallery />
         </Grid>
           <Grid item>
-        { <GaleriaTab num={0} onChange={props.onChange} retos={props.data} checked={props.checked}/> }
+         <GaleriaTab num={0} onChange={props.onChange} retos={props.data} checked={props.checked}/> 
         </Grid>
       </Grid> 
       </TabPanel>
@@ -246,20 +250,22 @@ export default function RetosGaleria(props) {
 
 
 export const RetoComponent = ({...props}) => {
+
   
   type retoType = {marca:string,info_marca:string,requisitos:string[],dificultad:number,
     recompensa:string,img:string}  //es opcional crear esto
 
   let reto:retoType = props.data.reto;
   
-  //let index = props.data.id;
+ 
+const t = useTranslations('retos');
 
   const Retos = styled(Paper)(({ theme }) => ({
       backgroundColor: 'white',
       ...theme.typography.body2,
       padding: theme.spacing(1),
       textAlign: 'center',
-      width:500,
+     // width:500,
       height:570,
       color: theme.palette.text.primary,
       fontWeight:'bold',
@@ -282,7 +288,7 @@ export const RetoComponent = ({...props}) => {
      </Typography>
   
      <Typography variant='subtitle1' color="text.primary"  gutterBottom sx={{ textAlign: 'left',fontWeight:'bold',}}>
-      Requisitos
+     {t('requisitos')}
      </Typography>
     
     <Typography variant='body2' color="text.primary"   sx={{ textAlign: 'left', p:1,}}>
@@ -297,7 +303,7 @@ export const RetoComponent = ({...props}) => {
     </Typography>
                    
      <Typography variant='subtitle1' color="text.primary"  gutterBottom sx={{ textAlign: 'left',fontWeight:'bold',}}>
-     Dificultad
+    {t('dificultad')}
      </Typography>
      <Typography variant='body2' sx={{ textAlign: 'left',}} >
      <Rating name="rating-dificultad" 
@@ -312,7 +318,7 @@ export const RetoComponent = ({...props}) => {
      />
     </Typography>
      <Typography variant='subtitle1' color="text.primary"  gutterBottom sx={{ textAlign: 'left',fontWeight:'bold',}}>
-      Recompensa
+     {t('recompensa')}
      </Typography>
 
      <Typography variant='h4' color="text.primary"  gutterBottom sx={{ textAlign: 'left',fontWeight:'bold',}}>
@@ -332,7 +338,7 @@ export const RetoComponent = ({...props}) => {
      
      endIcon={<NavigateNextIcon />}
      >
-      Unirse al reto
+      {t('unirse')}
 
       </Button>
    </CardActions>
@@ -351,9 +357,7 @@ export const RetoComponent = ({...props}) => {
 }
 
 
-/* galleryRetos con grid */
-
-/*
+function GalleryTabGrid(props){
 
   const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: 'white',
@@ -366,7 +370,8 @@ export const RetoComponent = ({...props}) => {
         fontWeight:'bold',
         borderRadius:20
       }));
-
+      let numRetos= props.num
+      let retos = props.retos
 
 return(
      
@@ -396,7 +401,7 @@ return(
                 
                   </Button>
                       </Grid>
-      ))
+      ))}
 
 {   [...Array(numRetos)].map(() =>(
                 <Grid item md={'auto'}   >
@@ -412,5 +417,6 @@ return(
       
     
      </Grid>
-     }
-*/
+     )}
+    
+    

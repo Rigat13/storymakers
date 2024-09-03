@@ -8,8 +8,6 @@ export default function FlipCard(props){
    return(
    
     <Box sx={{display:'flex', width:['25%','90%']}}  >
-    
-      
           { 
          contents.map( (content:contentData, i) => (
           

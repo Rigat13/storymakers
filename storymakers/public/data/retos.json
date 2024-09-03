@@ -7,7 +7,7 @@
   "requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
   "dificultad":3,
   "recompensa":"19,80€",
-  "img":"tedx/nosense-business.png"
+  "img":"../tedx/nosense-business.png"
   }
 }
 , 
@@ -19,7 +19,7 @@
     "requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
     "dificultad":3,
     "recompensa":"19,80€",
-    "img":"tedx/tedx-business.png"
+    "img":"../tedx/tedx-business.png"
   }
 }
 

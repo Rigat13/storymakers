@@ -1,5 +1,18 @@
 // @ts-check
-module.exports = {
+const createNextIntlPlugin = require('next-intl/plugin');
+ 
+const withNextIntl = createNextIntlPlugin();
+ 
+/** @type {import('next').NextConfig} */
+
+//const nextConfig = {};
+//module.exports = withNextIntl(nextConfig);
+
+
+module.exports = withNextIntl( {
+  
+ 
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -27,9 +40,13 @@ module.exports = {
 
     return config
   },
-
-  output: 'export',
+  
+  
+  //output:"export",
   images: { unoptimized: true }
+
+
+  
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   // trailingSlash: true,
 
@@ -38,4 +55,4 @@ module.exports = {
 
   // Optional: Change the output directory `out` -> `dist`
   // distDir: 'dist',
-}
+} ) ;

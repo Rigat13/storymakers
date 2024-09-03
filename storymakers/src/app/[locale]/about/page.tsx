@@ -1,10 +1,10 @@
 "use client"
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Descripcion from "./descripcion";
+import Descripcion from "../../UI/descripcion";
 import DashboardLayout from "./DescLayout";
 
 export default function About() {
@@ -25,13 +25,11 @@ export default function About() {
         <Item >INFO</Item>
         </Grid>
 
-        
-
        </Grid>
        </Container>
        
        <DashboardLayout>
-      <Descripcion/>
+              <Descripcion/>
       </DashboardLayout>
 
        </Typography>

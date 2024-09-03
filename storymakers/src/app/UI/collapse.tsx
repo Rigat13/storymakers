@@ -8,30 +8,7 @@ import Button from '@mui/material/Button';
 import RetosGaleria from './retosGaleria';
 import { RetoComponent } from './retosGaleria';
 import { DataLoader } from '../dataLoaders/dataLoader';
-
-
-const data = [
-  {"id":0,
-"reto":{
-"marca":"Marca 1",
-"info_marca":"Promueve un estilo de vida sostenible y consciente con la personalización de tu envase ecológico para tus compras a granel.",
-"requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
-"dificultad":3,
-"recompensa":"19,80€",
-"img":"tedx/nosense-business.png"
-}
-}, 
-
-{"id":1,
-"reto":{
-"marca":"Marca 2",
-"info_marca":"Promueve un estilo de vida sostenible y consciente con la personalización de tu envase ecológico para tus compras a granel.",
-"requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
-"dificultad":3,
-"recompensa":"19,80€",
-"img":"tedx/tedx-business.png"
-}
-}]
+import { Grid } from '@mui/material';
 
 export default function RetosCollapse() {
   type retos = {id:number,reto:{} }
@@ -58,16 +35,12 @@ export default function RetosCollapse() {
   
 
   return (
-    <Box sx={{ height: 600 }}>
-     {/* <FormControlLabel
-        control={<Switch checked={checked} onChange={handleChange} />}
-        label="Show"
-      />* */}
+    <>
+    <Box sx={{ height: 600, display:{xs:'none', md:'flex'}  }}>
       <Box
         sx={{
           '& > :not(style)': {
             display: 'flex',
-            //justifyContent:'space-around',
             height: 600,
             maxWidth:'100%'
           },
@@ -75,19 +48,38 @@ export default function RetosCollapse() {
       >
            
         <div>
-          <Box sx={{ maxWidth: '50%' }}  >
+          <Box sx={{display:{xs:'none', md:'flex'} , width:{xs:'20%',md:'auto'}, maxWidth: '50%' }}  >
             <Collapse orientation="horizontal" in={checked}  >
                     {<RetoComponent data={dataRetos[id]}/>}
             </Collapse>
             </Box>
 
-            <Box  sx={{ maxWidth: '100%' }}>
+            <Box  sx={{display:{xs:'none', md:'flex'},maxWidth: '100%' }}>
             <RetosGaleria data={dataRetos} onChange={(id:number)=> handleChange(id)} checked={checked}/>    
             </Box>
             </div>
-          
+
+      
+         
+         
       </Box>
     </Box>
+              {/* VERSION DE MÓVIL TEMPORAL*/}
+    <Grid container direction='column' sx={{display:{xs:'flex', md:'none'}}} >
+            
+              <Grid item xs sx={{width:'100%' }}>
+              <RetosGaleria data={dataRetos} onChange={(id:number)=> handleChange(id)} checked={checked}/>    
+              </Grid>
+              
+              <Grid item sx={{ width:{xs:'20%',md:'auto'}, maxWidth: '50%' }}  >
+              <Collapse orientation="horizontal" in={checked}  >
+                      {<RetoComponent data={dataRetos[id]}/>}
+              </Collapse>
+              </Grid>
+
+              </Grid>
+    
+    </>
   );
 
     }

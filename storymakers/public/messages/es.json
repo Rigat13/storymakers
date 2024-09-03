@@ -1,0 +1,36 @@
+{
+  
+    "appBar":{
+        "about": "Conócenos",
+        "retos":"Retos",
+        "blog":"Actualidad",
+        "contacto":"Contacto",
+        "iniciar_sesion":"Iniciar sesión"
+    },
+    "appFooter":{
+      "derechos_reservados":"Todos los derechos reservados."
+    },
+
+    "landing":{
+      "start_button":"¿Empezamos?",
+      "reconocimiento":"Reconocimiento",
+      "paso_anterior":"Anterior",
+      "paso_siguiente":"Siguiente",
+      "paso":"Paso",
+      "contrata_subscripcion":"Contrata tu subscripción"
+    },
+
+    "retos":{
+       "requisitos":"Requisitos",
+       "dificultad":" Dificultad",
+       "recompensa":"Recompensa",
+       "unirse":"Unirse al reto",
+       "participar":"Participar",
+        "busca_retos":"Busca retos..."
+    },
+
+    "about":{ 
+      "story_description":"Las historias tienen un poder único: nos conectan, nos hacen sentir y, lo más importante, nos impactan de una manera que pocas cosas logran. En un mundo donde la autenticidad es el nuevo lujo, el storytelling se convierte en el puente que une a las marcas con las personas. No hay nada más auténtico que una historia bien contada, porque refleja lo que somos, lo que pensamos y lo que sentimos. Una buena historia no solo informa, sino que inspira, crea empatía y deja una huella. En Storymakers, creemos que las historias son el latido de una comunicación efectiva, y nos dedicamos a darles vida para que resuenen con fuerza en cada rincón digital.",
+      "makers_description":"Los makers son el corazón de lo que hacemos. Son esas personas que, sin importar quiénes sean, tienen una historia que contar y ganas de compartirla. Aquí, los generadores de contenido no son solo clientes o fans de una marca; son individuos con voz propia, historias que quieren ser escuchadas y experiencias que merecen ser compartidas. Ya sea un cliente leal, un potencial comprador explorando por primera vez, o incluso un miembro del equipo interno, todos tienen algo que decir. Y en Storymakers, estamos aquí para darles ese espacio, para amplificar esas voces y convertir sus experiencias en contenido que resuena. Porque al final del día, lo que realmente mueve a las personas son las historias que los makers crean y comparten."
+    }
+  }

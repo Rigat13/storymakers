@@ -10,11 +10,15 @@ import FlipCard from "../UI/FlipCard";
 import CardCasoExito from "../UI/cardCasoExito";
 import InstaGallery from '../UI/beholdAPI';
 import { Caveat } from "next/font/google";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import {useLocale, useTranslations} from 'next-intl';
 
 const caveat = Caveat({subsets:["latin"], weight:"400", variable:"--font-caveat",});
 
 export default function LandingPage() {
+
+  const t = useTranslations('landing');
+
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: 'lightgrey',
         ...theme.typography.body2,
@@ -29,30 +33,21 @@ export default function LandingPage() {
         ...theme.typography.button,
         padding: theme.spacing(1),
         color: theme.palette.text.primary,
-        width:420,
-        height:250, //300
+        //width:420,
+        height:350, //300
         fontFamily: 'var(--font-caveat)',
-
-        fontSize: '0.9rem' ,//60,
+        /*'1.9rem' ,//60,
         '@media (minWidth:600px)': {
           fontSize: '1.5rem',
         },
         [theme.breakpoints.up('md')]: {
           fontSize: '3.5rem', //'4.0rem',
-        },
-        lineHeight: '100%', //1.14,
+        },*/
+        
+        lineHeight: '100%',
         textAlign: 'left'
       }));
 
-     /* const CuadradoTitulo =  ({ ...props })=> { 
-        return(
-        <svg width="423" height="33" viewBox="0 0 423 33" fill="none" xmlns="http://www.w3.org/2000/svg"  {...props}>
-          
-          <rect width="423" height="33" fill="black"/>
-          
-        </svg>
-      )}* */
-       
         const [esl, setEsl] = useState(0);
         const eslogan = ["Donde la autenticidad genera impacto."," EL PODER DEL STORYTELLING.","Comunica a través del UGC."];
         const [text,setText] = useState("")
@@ -68,7 +63,7 @@ export default function LandingPage() {
               changeEslogan();
               typeWriter();
            
-            }, 5000); // Change text every 5 seconds
+            }, 2000); // Change text every 2 seconds
    
           return () => {
            
@@ -78,7 +73,7 @@ export default function LandingPage() {
         }, []); 
       
       
-          return( <TituloLanding >
+          return( <TituloLanding sx={{  fontSize:{xs:'50px',sm:'55px',md:'60px'},}}  >
 
             {text}            
           </TituloLanding>   
@@ -115,8 +110,8 @@ export default function LandingPage() {
 
         <Typography variant="body1" component="div" className="bg-white">
             <Container maxWidth='xl' >
-           <Grid container spacing={3} sx={{p:1}} columns={1}>
-            <Grid item xs  >  {/* ESLOGAN, EMAIL, ETC */}
+           <Grid container spacing={3} sx={{p:1}} columns={{ xs:2, md:1}} rowSpacing={{xs:2}}>
+            <Grid item xs={2} md>  {/* ESLOGAN, EMAIL, ETC */}
            
             <div  className={caveat.variable} >
                
@@ -127,18 +122,17 @@ export default function LandingPage() {
            <Typography variant="subtitle1" component="section" sx={{p:1,}}>
             correo@storymakers.es
            </Typography>
-          
-          {/* <CuadradoTitulo style={{width:'100%',height:'auto'}} />*/}
 
           <Button
                 
                 sx={{ textTransform: 'none', fontWeight:"bold" ,
-                  color:'white', backgroundColor:'black!important', width:'100%'
+                  color:'white', backgroundColor:'black!important', width:'100%',
+                 
                 }}
                 href={'https://tally.so/r/mBG4E1'}  // ROUTING SECTIONS
                 target="_blank"
               >          
-              ¿Empezamos?     
+            {t('start_button')}
               </Button >
            
             </Grid>

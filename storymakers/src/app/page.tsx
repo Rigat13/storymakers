@@ -1,6 +1,6 @@
 "use client";
 import React, {useEffect, useState} from 'react';
-import Layout from './layout';
+import Layout from './[locale]/layout';
 import CarrouselData from './UI/carrousel';
 import SidebarMenu from "@/app/UI/SidebarMenu";
 import {defaultLang, dictionary} from "@/content";

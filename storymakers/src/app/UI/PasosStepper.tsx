@@ -14,9 +14,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import SwipeableViews from 'react-swipeable-views';
-
-
-import { createTheme, responsiveFontSizes,ThemeProvider } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { useTranslations } from 'next-intl';
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -43,7 +42,7 @@ export default function PasosStepper() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   
-  
+  const t = useTranslations('landing');
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -59,7 +58,7 @@ export default function PasosStepper() {
 
 
   const pasosList =   data.map( (paso,index) => (
-    <div style={styles.slide}>
+    <div style={styles.slide} key={index}>
     <PasosComponent paso={paso} index={index} />
     </div>))
 
@@ -85,15 +84,7 @@ export default function PasosStepper() {
     onChangeIndex={handleStepChange}
     enableMouseEvents
     >
-  {
-    
-    data.map( (paso,index) => (
-    <div style={styles.slide}>
-    <PasosComponent paso={paso} index={index} />
-    </div>
-    )
-    )
-  }
+  { pasosList }
     </SwipeableViews>
 
     <MobileStepper
@@ -109,7 +100,7 @@ export default function PasosStepper() {
             disabled={activeStep === maxSteps - 1}
             sx={{textTransform: 'none',color:'black',fontWeight:"bold" }}
           >
-           Siguiente
+          {t('paso_siguiente')}
             {theme.direction === 'rtl' ? (
               <KeyboardArrowLeft />
             ) : (
@@ -128,7 +119,7 @@ export default function PasosStepper() {
             ) : (
               <KeyboardArrowLeft />
             )}
-            Anterior
+           {t('paso_anterior')}
           </Button>
         }
       />
@@ -145,19 +136,19 @@ const data = [
     {
       "title":"CREA TU CAMPAÑA",
       "body":"Define el objetivo de tu campaña, crea uno o más retos y define el incentivo que recibe el creador de contenido."
-       ,"button":"¿Empezamos?"
-      ,"img":"reels/reel-1.png"
+       ,"button":"start_button"
+      ,"img":"../reels/reel-1.png"
     },
     {
       "title":"VÁLIDA y DESCARGA EL CONTENIDO DIGITAL",
       "body":"A los creadores de contenido les ha gustado tu reto y ya han participado en él. Ahora es tu momento. Visualiza este contenido auténtico y de calidad y valida aquel contenido que vayas a usar para tus comunicaciones."
-      ,"button":"¿Empezamos?"  
-      ,"img":"reels/reel-2.png"
+      ,"button":"start_button"  
+      ,"img":"../reels/reel-2.png"
       },  {
         "title":"MÉTRICAS DE RENDIMIENTO DE LA CAMPAÑA",
         "body":"Una vez hayas realizado lo anterior, ya estará todo listo para analizar los datos de la campaña."
-         ,"button":"Contrata tu subscripción"
-        ,"img":"reels/reel-3.png"
+         ,"button":"contrata_subscripcion"
+        ,"img":"../reels/reel-3.png"
       }
 
 ]
@@ -167,6 +158,8 @@ const data = [
 const PasosComponent = ({...props}) => {
     let paso = props.paso;
     let index = props.index;
+
+    const t = useTranslations('landing')
 
     const Pasos = styled(Paper)(({ theme }) => ({
         backgroundColor: 'white',
@@ -181,21 +174,24 @@ const PasosComponent = ({...props}) => {
       }));
        
     return(
-        <Pasos elevation={6}  >
+        <Pasos elevation={6} sx={{width:{xs:250, sm:'100%', md:'100%'}}} >
   
       <Card sx={{display: 'flex',backgroundColor:'transparent',boxShadow:'none',height:'auto',m:4 }} >
       <Box sx={{ display: 'flex', flexDirection: 'column', width:'100%' }}>
      <CardContent sx={{ flex: '0 1 auto' }}>
     
-       <Typography variant='subtitle1' color="text.primary"  gutterBottom sx={{ textAlign: 'left',fontWeight:"bold"}}>
-         Paso {index+1}.
+       <Typography variant='subtitle1' color="text.primary"  gutterBottom  sx={{ textAlign: 'left',fontWeight:"bold"  }}>
+         {t('paso')} {index+1}.
        </Typography>
     
-       <Typography variant='h4' color="text.primary"  gutterBottom sx={{ textAlign: 'left', width:500}}>
+       <Typography variant='h4' color="text.primary"  gutterBottom 
+       sx={{ textAlign: 'left', width:{xs:150,sm:200,md:500}, fontSize:{xs:'100%',md:30}}}>
        {paso.title}
        </Typography>
       
-       <Typography paragraph  sx={{ textAlign: 'justify',height:200, width:500}} >  
+       <Typography paragraph  sx={{ textAlign: 'justify',height:200, 
+        width:{xs:150,sm:200,md:500}, fontSize:{xs:'100%',}
+       }} >  
          {paso.body}
        </Typography>
   
@@ -205,12 +201,12 @@ const PasosComponent = ({...props}) => {
        sx={{backgroundColor:'black!important'
         ,color:'white'
         ,textTransform: 'none'
-        ,width:200
+        ,width:{xs:150,sm:200,md:200}
       }}
        
        endIcon={<NavigateNextIcon />}
        >
-        {paso.button}
+        {t(paso.button)}
 
         </Button>
      </CardActions>
@@ -222,16 +218,10 @@ const PasosComponent = ({...props}) => {
        image={paso.img}
        alt="reel"
      />
+      </Card>
   
-   
-   </Card>
-  
-           </Pasos>
+ </Pasos>
   
       )    
-         
-    
-
-      
-      
+        
   }

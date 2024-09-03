@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -11,39 +13,24 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { SvgIcon } from '@mui/material';
-import {ListItem}from '@mui/material';
-import {Divider}from '@mui/material';
-import {StoryMakersLogoBlack} from './svgComponent';
 
-import { styled } from '@mui/material/styles';
-import  { ButtonProps } from '@mui/material/Button';
-import { purple } from '@mui/material/colors';
-import { createTheme,ThemeProvider } from '@mui/material/styles';
+//import AdbIcon from '@mui/icons-material/Adb';
+import {StoryMakersLogoBlack} from './svgComponent';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 //GTM
 import { sendGTMEvent } from '@next/third-parties/google'
 
+import {useLocale, useTranslations} from 'next-intl';
+import {useRouter,usePathname,Link} from '../../navigation';
 
-const theme = createTheme({
-  palette: {
-      primary: purple,
-      secondary: purple,
-  },
-});
-
-//{"tab":"LANDING EN CONSTRUCCIÓN", "href":"/landing","color":'blue'}, 
-const pages = [
-              {"tab":"Conócenos", "href":"/about","color":'black'},  
-               {"tab":"Retos", "href":"/retos","color":'black'},
-              {"tab":"Actualidad", "href":"/blog","color":'black'},
-              {"tab":"Contacto", "href":"/contact","color":'black'}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+ function ResponsiveAppBar(props) {
 
+  const t = useTranslations('appBar');
 
-
-function ResponsiveAppBar() {
+  const locale = useLocale()
+  
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -63,9 +50,11 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" >
-      <Container maxWidth="xl" className='bg-[#D9D9D9]'>
+    <AppBar position="static" className='bg-[#D9D9D9]' sx={{maxWidth:'xl'}}>
+      <Container maxWidth='xl' className='bg-[#D9D9D9]' >
         <Toolbar disableGutters>
+          {/* EJEMPLO MENU DE USUARIO */}
+
           {/*<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
             <Typography
             variant="h6"
@@ -86,9 +75,12 @@ function ResponsiveAppBar() {
           </Typography>          
           */}
  
-          <IconButton href="/">
+
+          <IconButton >   {/* LOGO PC */}
+          <Link  href="/">
           <StoryMakersLogoBlack
           sx={{ display: { xs: 'none', md: 'flex',height: 'inherit',width:'60mm' }, mr: 1 }} />
+         </Link>
           </IconButton>
          
         
@@ -100,9 +92,9 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              //color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon sx={{color:'black'}} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -122,21 +114,28 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }} 
             > 
-              {pages.map((page) => (
+              {props.pages.map((page) => (
                 
-                <MenuItem  key={page.tab} onClick={handleCloseNavMenu}>
-                  <Typography  textAlign="center">
-                    
-                    {page.tab}
-                    </Typography>
+                <MenuItem  key={page.tab} component={Button}  sx={{textTransform:'none'}} >
+                
+                  <Link  href={page.href}  >       {/* ROUTING SECTIONS */}
+
+                  <Typography  textAlign="center"    >
+                  {t(page.tab)}
+                  </Typography>
+
+                  </Link>
+                   
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-          <IconButton href="/">
+          <IconButton>  {/* LOGO MOVIL */}
+          <Link  href="/">
           <StoryMakersLogoBlack
           sx={{ display: {  xs: 'flex', md: 'none',height: 'inherit',width:'50mm' }, mr: 1 }} />
+          </Link>
           </IconButton>
          {/** 
          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> 
@@ -171,7 +170,7 @@ function ResponsiveAppBar() {
 
           <Box sx={{  display: { xs: 'none', sm:'block',padding: '6px 46px',} }}>         
           
-            {pages.map((page) => (
+            {props.pages.map((page) => (
               <Button
                 key={page.tab}
                 onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
@@ -179,26 +178,36 @@ function ResponsiveAppBar() {
                 sx={{ textTransform: 'none', fontWeight:"bold" ,
                   color:`${page.color}`
                 }}
-                href={page.href}  // ROUTING SECTIONS
-                
+             
               >
-                {page.tab}
-                
+                <Link  href={page.href}  >       {/* ROUTING SECTIONS */}
+
+                {t(page.tab)}
+                </Link>
               </Button >
             ))}
+            
           </Box>
 
+          <LangMenu languages={props.locales}/>
                  
             <Button variant="contained"  role={undefined} 
             sx={{backgroundColor:'#000000!important',
               boxShadow:"none",
               textTransform: 'none',
-            
+              display:{xs:'none', md:'flex'}
             }}
-           
-               onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
-            > Iniciar sesion</Button>
-         
+            onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
+            > {t('iniciar_sesion')}</Button>
+
+
+            {/* BOTÓN INICIAR SESION EN MOVIL */}  
+          <IconButton sx={{ display:{xs:'flex', md:'none'}}}
+           onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
+          >
+            <AccountCircleIcon fontSize="large" sx={{color:'black'}}/>
+          </IconButton>  
+         {/* EJEMPLO MENU DE USUARIO */}
          {/*   
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -236,3 +245,66 @@ function ResponsiveAppBar() {
   );
 }
 export default ResponsiveAppBar;
+
+
+
+ function  LangMenu(props) {
+
+  const locale = useLocale();
+  
+  const router = useRouter();
+  const pathname = usePathname();
+
+  let languages= props.languages
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+   
+    setAnchorEl(null);
+  };
+
+  const changeLang = (id) =>{
+    router.replace({pathname},{locale:id})
+  } 
+  return (
+    <Box sx={{ flexGrow: 0, width:{xs:40, md:'auto'}}}>
+      <Button
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        sx={{textTransform: 'none',color:'black'}}
+        size='small'
+      >    {locale}
+      </Button>
+      <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+              
+      >
+        
+       { languages.map( (lan:string,i:number) =>{
+        return( 
+           
+          <MenuItem key={i}
+          onClick={()=>changeLang(lan)}>
+            {lan}</MenuItem>
+             
+        )}
+        
+       )}
+      
+      </Menu>
+    </Box>
+  );
+}
