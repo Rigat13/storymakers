@@ -26,6 +26,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import SearchIcon from '@mui/icons-material/Search';
+import HistoryIcon from '@mui/icons-material/History';
 
 import { useTranslations } from 'next-intl';
 
@@ -76,7 +77,7 @@ function GaleriaTab(props){
       title={<Typography variant='h6' component={'h2'} sx={{textAlign:'left'}}>{item.reto.marca}</Typography>} 
       subtitle={<Typography >
        <Typography variant='caption' component="div" noWrap >{item.reto.info_marca}</Typography> 
-        <Button variant="contained"  sx={{textTransform: 'none', mt:1,
+        <Button variant="contained"  sx={{textTransform: 'none', mt:1,font:'inherit',
         backgroundColor:'#F0A362!important',  
       }} > {t('participar')}</Button>
       </Typography>}
@@ -106,7 +107,7 @@ function GaleriaTab(props){
       title={<Typography variant='h6' component={'h2'} sx={{textAlign:'left'}}>Marca X</Typography>} 
       subtitle={<Typography >
        <Typography variant='caption' component="div" noWrap >El reto consiste en</Typography> 
-        <Button variant="contained"  sx={{textTransform: 'none', mt:1,
+        <Button variant="contained"  sx={{textTransform: 'none', mt:1,font:'inherit',
         backgroundColor:'#F0A362!important',  
       }} >{t('participar')}  </Button>
       </Typography>}
@@ -210,7 +211,7 @@ export default function RetosGaleria(props) {
 
          }}
       >
-        <Tab disableRipple icon={<RestaurantIcon sx={{ color:'black' }}/>} {...a11yProps(0)}
+        <Tab disableRipple icon={<HistoryIcon sx={{ color:'black' }}/>} {...a11yProps(0)}
        
         />
         <Tab disableRipple icon={<SurfingIcon sx={{ color:'black' }} />} {...a11yProps(1)}
@@ -333,7 +334,8 @@ const t = useTranslations('retos');
      sx={{backgroundColor:'black!important'
       ,color:'white'
       ,textTransform: 'none'
-      ,width:200
+      ,width:200,
+      font:'inherit',
     }}
      
      endIcon={<NavigateNextIcon />}

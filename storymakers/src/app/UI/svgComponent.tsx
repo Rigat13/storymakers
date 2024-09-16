@@ -4,6 +4,7 @@ import LogoJuntoOscuro from '../../../public/logos/recurso_5.svg';
 import LogoJuntoBlanco from '../../../public/logos/recurso_11.svg';
 import StoryLogo from '../../../public/logos/story.svg';
 import MakersLogo from '../../../public/logos/makers.svg';
+import TikTok from '../../../public/iconos/tiktok.svg';
 //elementos
 import divisorFooter from '../../../public/elementos/divisorFooter.svg';
 import bloque from '../../../public/elementos/bloque.svg';
@@ -26,6 +27,9 @@ export const MakersLogoOnly = (props) => (
     <SvgIcon component={MakersLogo} viewBox="0 0 537 120" {...props} />
     )
 
+export const TikTokLogo = (props) =>(
+<SvgIcon component={TikTok} viewBox="0 0 30 30" {...props} />
+)    
 
 // ELEMENTOS SVG
 

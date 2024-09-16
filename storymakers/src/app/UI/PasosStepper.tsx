@@ -26,7 +26,7 @@ const styles = {
     padding: '0 120px',
   },
   slideContainer: {
-    padding: '0 20px',
+    padding: '0px 20px',
   },
   slide: {
     padding: 15,
@@ -70,16 +70,15 @@ export default function PasosStepper() {
          
     <Box sx={{flexGrow:1,width:'100%'}}>
 <SwipeableViews  
+className='slidesStepsResponsive'
     style={{
       width: '100%',
-     paddingRight: '20%'
     }} 
     slideStyle={{
       width: '100%',
-      paddingRight: ' 1%'
+      paddingRight: '1%'
       
-    }} 
-   
+    }}     
     index={activeStep}
     onChangeIndex={handleStepChange}
     enableMouseEvents
@@ -134,21 +133,21 @@ export default function PasosStepper() {
 
 const data = [
     {
-      "title":"CREA TU CAMPAÑA",
-      "body":"Define el objetivo de tu campaña, crea uno o más retos y define el incentivo que recibe el creador de contenido."
+      "title":"pasos.paso_1.title",
+      "body":"pasos.paso_1.body"
        ,"button":"start_button"
-      ,"img":"../reels/reel-1.png"
+      ,"img":"../img/paso_1.png"
     },
     {
-      "title":"VÁLIDA y DESCARGA EL CONTENIDO DIGITAL",
-      "body":"A los creadores de contenido les ha gustado tu reto y ya han participado en él. Ahora es tu momento. Visualiza este contenido auténtico y de calidad y valida aquel contenido que vayas a usar para tus comunicaciones."
+      "title":"pasos.paso_2.title",
+      "body":"pasos.paso_2.body"
       ,"button":"start_button"  
-      ,"img":"../reels/reel-2.png"
+      ,"img":"../img/paso_2.png"
       },  {
-        "title":"MÉTRICAS DE RENDIMIENTO DE LA CAMPAÑA",
-        "body":"Una vez hayas realizado lo anterior, ya estará todo listo para analizar los datos de la campaña."
+        "title":"pasos.paso_3.title",
+        "body":"pasos.paso_3.body"
          ,"button":"contrata_subscripcion"
-        ,"img":"../reels/reel-3.png"
+        ,"img":"../img/paso_3.png"
       }
 
 ]
@@ -177,27 +176,29 @@ const PasosComponent = ({...props}) => {
         <Pasos elevation={6} sx={{width:{xs:250, sm:'100%', md:'100%'}}} >
   
       <Card sx={{display: 'flex',backgroundColor:'transparent',boxShadow:'none',height:'auto',m:4 }} >
-      <Box sx={{ display: 'flex', flexDirection: 'column', width:'100%' }}>
-     <CardContent sx={{ flex: '0 1 auto' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', width:{xs:'60%',md:'50%'} }}>
+     <CardContent sx={{ flex: '1 0 auto' }}>
     
        <Typography variant='subtitle1' color="text.primary"  gutterBottom  sx={{ textAlign: 'left',fontWeight:"bold"  }}>
          {t('paso')} {index+1}.
        </Typography>
     
        <Typography variant='h4' color="text.primary"  gutterBottom 
-       sx={{ textAlign: 'left', width:{xs:150,sm:200,md:500}, fontSize:{xs:'100%',md:30}}}>
-       {paso.title}
+       sx={{ textAlign: 'left', width:{xs:150,sm:200,md:250}, fontSize:{xs:'100%',md:30}}}>
+       {t(paso.title)}
        </Typography>
       
-       <Typography paragraph  sx={{ textAlign: 'justify',height:200, 
-        width:{xs:150,sm:200,md:500}, fontSize:{xs:'100%',}
+       <Typography paragraph  sx={{ textAlign: 'justify',height:150, 
+        width:{xs:150,sm:200,md:200}, fontSize:{xs:'100%',}
        }} >  
-         {paso.body}
+         {t(paso.body)}
        </Typography>
   
      </CardContent>
-     <CardActions sx={{ flex: '1'}}>
+     <CardActions sx={{ flex: '1', width:{xs:200}}}>
        <Button size="small" 
+       href='https://tally.so/r/mBG4E1'
+       target='_blank'
        sx={{backgroundColor:'black!important'
         ,color:'white'
         ,textTransform: 'none'
@@ -211,12 +212,12 @@ const PasosComponent = ({...props}) => {
         </Button>
      </CardActions>
      </Box>
-    
      <CardMedia
        component="img"
-       sx={{ width: 300,display: {  xs: 'none', md: 'flex'} }}
+       sx={{ width: 300,height:400,borderRadius:3,
+        display: {xs: 'none', md: 'flex',}}}
        image={paso.img}
-       alt="reel"
+       alt="step"
      />
       </Card>
   

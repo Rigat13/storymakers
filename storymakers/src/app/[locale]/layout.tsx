@@ -18,6 +18,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat", });
   
+
 export function generateStaticParams() {
       return locales.map((locale) => ({locale}));
     }

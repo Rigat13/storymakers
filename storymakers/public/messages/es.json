@@ -1,23 +1,35 @@
 {
-  
     "appBar":{
         "about": "Conócenos",
-        "retos":"Retos",
+        "retos":"Campañas",
         "blog":"Actualidad",
         "contacto":"Contacto",
-        "iniciar_sesion":"Iniciar sesión"
-    },
+        "iniciar_sesion":"Iniciar sesión",
+        "sign_in_dialog":" Ui has llegado antes de que lo tengamos preparado, cómo no somos de dar spoilers, déjanos tu correo y te avisamos cuando lo tengamos ready ;)"
+        ,"aviso":"¡¡Importante!!",
+        "okay":"¡Entendido!"
+      },
     "appFooter":{
       "derechos_reservados":"Todos los derechos reservados."
     },
 
     "landing":{
       "start_button":"¿Empezamos?",
-      "reconocimiento":"Reconocimiento",
       "paso_anterior":"Anterior",
       "paso_siguiente":"Siguiente",
       "paso":"Paso",
-      "contrata_subscripcion":"Contrata tu subscripción"
+      "contrata_subscripcion":"Contrata tu subscripción",
+      "titulo_fijo":"La emoción de sentirse vivo",
+      "eslogan_fijo":"Somos ",
+      "eslogans":{"eslogan_1":"experiencias", "eslogan_2":"instantes",
+      "eslogan_3":"memorias","eslogan_4":"historias"},
+      "pasos":{"paso_1":{"title":"CREA TU CAMPAÑA","body":"Define el objetivo de tu campaña, crea uno o más retos y define el incentivo que recibe el creador de contenido."}
+              ,"paso_2":{"title":"VÁLIDA y DESCARGA EL CONTENIDO DIGITAL","body":"A los creadores de contenido les ha gustado tu reto y ya han participado en él. Ahora es tu momento. Visualiza este contenido auténtico y de calidad y valida aquel contenido que vayas a usar para tus comunicaciones."} 
+              ,"paso_3":{"title":"MÉTRICAS DE RENDIMIENTO DE LA CAMPAÑA","body":"Una vez hayas realizado lo anterior, ya estará todo listo para analizar los datos de la campaña."}     
+              }
+      ,"caso_exito_titulo":"Caso de éxito"
+      ,"caso_exito":"¿Qué hacen las marcas con todo el contenido que se genera? En Storymakers quisimos hacer un experimento en las TEDx, uno de los eventos de conferencias nacionales e internacionales por excelencia. Decidimos lanzar tres retos a los asistentes para la creación de contenido durante el evento, como resultado, TEDxUPFMataró obtuvo vídeos y fotos de sus asistentes explicando y viviendo la experiencia, mejor feedback imposible."        
+      ,"saber_mas":"Saber más"        
     },
 
     "retos":{

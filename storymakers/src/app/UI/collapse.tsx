@@ -25,10 +25,6 @@ export default function RetosCollapse() {
    
   };
 
-  const handleOpen = (id:number) => {
-    setChecked(true);
-    setId(id);
-  }
 
   if(dataRetos){
       if(dataRetos.length>0){

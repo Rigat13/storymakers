@@ -38,12 +38,12 @@ export default function Descripcion(){
         </Grid>
         
         <Grid item sx={{display:{xs:'none',md:'flex'}}}>
-       
+       {/* FOTOS STORY */}
         <ImageList sx={{ width:{xs:300,md:500}, height:{xs:'auto',md:400} }} cols={2} rowHeight={164} variant="woven">
         <ImageListItem key={1}>
         <img
-        srcSet={`${"../tedx/tedx-back-card.png"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-        src={`${"../tedx/tedx-back-card.png"}?w=164&h=164&fit=crop&auto=format`}
+        srcSet={`${"../img/story_foto_izquierda.jpg"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+        src={`${"../img/story_foto_izquierda.jpg"}?w=164&h=164&fit=crop&auto=format`}
         alt={"foto prueba"}
         loading="lazy"
         style={{borderRadius:20}}
@@ -51,8 +51,8 @@ export default function Descripcion(){
         </ImageListItem>
         <ImageListItem key={2}>
         <img
-        srcSet={`${"../tedx/tedx-back-card.png"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-        src={`${"../tedx/tedx-back-card.png"}?w=164&h=164&fit=crop&auto=format`}
+        srcSet={`${"../img/paso_3.png"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+        src={`${"../img/paso_3.png"}?w=164&h=164&fit=crop&auto=format`}
         alt={"foto prueba"}
         loading="lazy"
         style={{borderRadius:20}}
@@ -63,11 +63,11 @@ export default function Descripcion(){
 
         </Grid>
 
-        <Grid item xs sx={{display:{xs:'none',md:'flex'}}}>
+        <Grid item xs sx={{display:{xs:'none',md:'flex'}}}>  {/* FOTOS MAKERS */}
         <Box sx={{display:"flex", justifyContent:"space-around", height:'auto', width:{xs:300,md:400},}} >
             <img
-            srcSet={`${"../tedx/tedx-back-card.png"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            src={`${"../tedx/tedx-back-card.png"}?w=164&h=164&fit=crop&auto=format`}
+            srcSet={`${"../img/about_makers.png"}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+            src={`${"../img/about_makers.png"}?w=164&h=164&fit=crop&auto=format`}
             alt={"foto prueba"}
             loading="lazy"
             style={{borderRadius:20, width:'100%', height:'auto'}}
@@ -102,7 +102,7 @@ const DescriptionComponent = (props) => {
 
     return(
     
-        <Box sx={{display:'flex',justifyContent:'center'}}>
+        <Box sx={{display:'flex',justifyContent:'center',}}>
            
         <Typography variant="body2" component="section" sx={{width:'100%',textAlign:'justify'}}>
        
@@ -110,10 +110,10 @@ const DescriptionComponent = (props) => {
         {logo}  
         </Typography>
        
-        <BloqueSVG sx={{ width:{xs:'60%',md:'40%'},height:'auto' ,}}/>
+       {/** <BloqueSVG sx={{ width:{xs:'60%',md:'40%'},height:'auto' ,}}/>  */}
        
         <Typography  variant="body2" paragraph 
-        sx={{width:{xs:'110%',md:500},textAlign:'justify', pt:2, color:"white", fontWeight:"bold"}}>
+        sx={{width:{xs:'110%',md:500},textAlign:'justify', pt:2, color:"black", }}>
         {desc}
         </Typography>
         </Typography>

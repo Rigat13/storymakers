@@ -13,10 +13,13 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import ResponsiveDialog, { ResponsiveDialogCampañas } from './dialogSignIn';
 
 //import AdbIcon from '@mui/icons-material/Adb';
 import {StoryMakersLogoBlack} from './svgComponent';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 //GTM
 import { sendGTMEvent } from '@next/third-parties/google'
 
@@ -170,43 +173,29 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
           <Box sx={{  display: { xs: 'none', sm:'block',padding: '6px 46px',} }}>         
           
-            {props.pages.map((page) => (
+            {props.pages.map((page,i:number) => (
               <Button
                 key={page.tab}
                 onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
                
-                sx={{ textTransform: 'none', fontWeight:"bold" ,
+                sx={{ textTransform: 'none', fontWeight:"bold" ,fontFamily:'inherit',
                   color:`${page.color}`
+
                 }}
              
               >
-                <Link  href={page.href}  >       {/* ROUTING SECTIONS */}
+                <Link  href={page.href} key={i} target={i > 1? '_blank':''}  >       {/* ROUTING SECTIONS  href={i==1?'':page.href}  {i==1? <ResponsiveDialogCampañas/> : t(page.tab) }*/}
 
-                {t(page.tab)}
+                {t(page.tab) }
                 </Link>
               </Button >
             ))}
             
           </Box>
 
-          <LangMenu languages={props.locales}/>
+          <LangMenu languages={props.locales} styleLocales={props.styleLocales} />
                  
-            <Button variant="contained"  role={undefined} 
-            sx={{backgroundColor:'#000000!important',
-              boxShadow:"none",
-              textTransform: 'none',
-              display:{xs:'none', md:'flex'}
-            }}
-            onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
-            > {t('iniciar_sesion')}</Button>
-
-
-            {/* BOTÓN INICIAR SESION EN MOVIL */}  
-          <IconButton sx={{ display:{xs:'flex', md:'none'}}}
-           onClick={() => sendGTMEvent({event: 'gtm.linkClick'})}
-          >
-            <AccountCircleIcon fontSize="large" sx={{color:'black'}}/>
-          </IconButton>  
+          <ResponsiveDialog/> 
          {/* EJEMPLO MENU DE USUARIO */}
          {/*   
           <Box sx={{ flexGrow: 0 }}>
@@ -256,6 +245,7 @@ export default ResponsiveAppBar;
   const pathname = usePathname();
 
   let languages= props.languages
+  
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -278,9 +268,11 @@ export default ResponsiveAppBar;
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{textTransform: 'none',color:'black'}}
+        sx={{textTransform: 'none',color:'black',fontFamily:'inherit'}}
         size='small'
-      >    {locale}
+        endIcon={open ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
+      > 
+         {props.styleLocales[locale]}
       </Button>
       <Menu
               id="basic-menu"
@@ -298,7 +290,7 @@ export default ResponsiveAppBar;
            
           <MenuItem key={i}
           onClick={()=>changeLang(lan)}>
-            {lan}</MenuItem>
+            {props.styleLocales[lan]}</MenuItem>
              
         )}
         
