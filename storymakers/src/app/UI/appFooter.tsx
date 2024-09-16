@@ -38,8 +38,8 @@ export default function AppFooter({pages}){
       const t_footer = useTranslations('appFooter');  
     return(
 
-           <Typography variant="body1" component="footer"  sx={{display:"flex",}} className="footer-color" >
-           <Box>
+           <Typography variant="body1" component="footer"  sx={{display:"block",}} className="footer-color" >
+           <Box sx={{flexGrow: 1}}>
                        
                 <Box  sx={{flexGrow: 1}}   >
                   <Container>

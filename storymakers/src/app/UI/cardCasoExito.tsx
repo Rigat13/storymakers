@@ -43,18 +43,15 @@ export default function CardCasoExito(){
 
         </Button>
      </CardActions>
-        </Box>
-
-        
+        </Box>      
 
         <CardMedia
           component="img"
           sx={{ width: 300 }}
-          image="img/caso_de_exito_TEDx.jpg"
+          image="img/caso_exito_TEDx.png"
           alt="reconocimiento"
         />
 
-      
       </Card>
 
       </Paper>
