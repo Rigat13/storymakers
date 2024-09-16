@@ -7,7 +7,7 @@ export default function FlipCard(props){
     let contents = DataLoader(props.data)
    return(
    
-    <Box sx={{display:'flex', width:['25%','90%']}}  >
+    <Box sx={{display:'flex',justifyContent:'center', width:['25%','90%']}}  >
           { 
          contents.map( (content:contentData, i) => (
           

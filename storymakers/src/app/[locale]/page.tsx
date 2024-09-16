@@ -11,13 +11,14 @@ import CardCasoExito from "../UI/cardCasoExito";
 import InstaGallery from '../UI/beholdAPI';
 import { Caveat } from "next/font/google";
 import { useEffect, useState } from "react";
-import {useLocale, useTranslations} from 'next-intl';
+import {useLocale, useTranslations,useMessages} from 'next-intl';
 
 const caveat = Caveat({subsets:["latin"], weight:"400", variable:"--font-caveat",});
 
 export default function LandingPage() {
 
   const t = useTranslations('landing');
+  const messages = useMessages();
 
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: 'lightgrey',
@@ -30,11 +31,11 @@ export default function LandingPage() {
       }));
 
       const TituloLanding = styled(Typography)(({ theme }) => ({
-        ...theme.typography.button,
+        ...theme.typography,
         padding: theme.spacing(1),
         color: theme.palette.text.primary,
         //width:420,
-        height:350, //300
+        //height:240, //300
         fontFamily: 'var(--font-caveat)',
         /*'1.9rem' ,//60,
         '@media (minWidth:600px)': {
@@ -49,7 +50,10 @@ export default function LandingPage() {
       }));
 
         const [esl, setEsl] = useState(0);
-        const eslogan = ["Donde la autenticidad genera impacto."," EL PODER DEL STORYTELLING.","Comunica a través del UGC."];
+        const keys= Object.keys(messages.landing['eslogans']);
+        const eslogan =keys.map((key) => (t(`eslogans.${key}`)) )
+        //keys.map((key) => (t(`eslogans.${key}`)) )
+        //["Donde la autenticidad genera impacto."," El poder del storytelling.","Comunica a través del UGC."];
         const [text,setText] = useState("")
         let index = 0;
         var initText = ""
@@ -73,8 +77,9 @@ export default function LandingPage() {
         }, []); 
       
       
-          return( <TituloLanding sx={{  fontSize:{xs:'50px',sm:'55px',md:'60px'},}}  >
-
+          return( <TituloLanding sx={{  fontSize:{xs:'30px',sm:'34px',md:'40px'}, height:{xs:120,md:160}}}  >
+             
+            {t('eslogan_fijo')} 
             {text}            
           </TituloLanding>   
 )
@@ -93,6 +98,7 @@ export default function LandingPage() {
         const typeWriter = () => {
         
           var totalText =eslogan[esl];
+ 
           var speed =90;
           if (index < totalText.length){
            initText = initText.concat(totalText.charAt(index));
@@ -111,16 +117,21 @@ export default function LandingPage() {
         <Typography variant="body1" component="div" className="bg-white">
             <Container maxWidth='xl' >
            <Grid container spacing={3} sx={{p:1}} columns={{ xs:2, md:1}} rowSpacing={{xs:2}}>
+            
             <Grid item xs={2} md>  {/* ESLOGAN, EMAIL, ETC */}
            
-            <div  className={caveat.variable} >
-               
+            <Typography variant="h1" component="h1" sx={{p:1,fontSize:{xs:30,sm:40,md:70}}}>
+            {t("titulo_fijo")}
+           </Typography>
+           
+            <div className={caveat.className}  >
+              
                <CarrouselEslogan/>   
 
            </div>
            
            <Typography variant="subtitle1" component="section" sx={{p:1,}}>
-            correo@storymakers.es
+           hola@storymakers.es
            </Typography>
 
           <Button
@@ -145,7 +156,7 @@ export default function LandingPage() {
             </Grid>
            </Grid>
 
-           <Grid container spacing={1} sx={{p:1,justifyContent:'center'}} > {/* PASOS CREADORES CONTENIDO */}
+           <Grid container spacing={1} sx={{p:1,justifyContent:'center',mt:4}} > {/* PASOS CREADORES CONTENIDO */}
            
            <PasosStepper/>
            
@@ -153,8 +164,15 @@ export default function LandingPage() {
            </Grid>
         
             {/* MARCAS  */}
+            
             <Grid container spacing={1} sx={{p:4,justifyContent:'center'}}>  
-            <Grid item xs={10}>
+            
+            <div className={caveat.className}>
+            <TituloLanding sx={{fontSize:40,textAlign:'center',textTransform:'uppercase'}} > Han confiado en nosotros </TituloLanding>
+            </div>
+          
+            <Grid item xs={1} md={7}>
+            
             <FlipCard data={'marcas'}/>
             </Grid>
            </Grid>
@@ -169,7 +187,7 @@ export default function LandingPage() {
 
            {/* RECONOCIMIENTOS/PREMIOS */}
            <Grid container spacing={1} sx={{p:1,m:1,justifyContent:'center'}} >
-           <Grid item xs={10} >
+           <Grid item xs={2} md={10}>
             <FlipCard data={'premios'}/>
             </Grid>
            

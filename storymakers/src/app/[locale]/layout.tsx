@@ -1,6 +1,6 @@
 //"use client";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Atkinson_Hyperlegible, Montserrat } from "next/font/google";
 import ".././globals.scss";
 import Head from "next/head";
 
@@ -9,7 +9,7 @@ import AppFooter from '../UI/appFooter';
 
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, unstable_setRequestLocale} from 'next-intl/server';
-import {locales} from "../../config"
+import {locales,styleLocales} from "../../config"
 
 
 import { GoogleAnalytics,GoogleTagManager } from '@next/third-parties/google'
@@ -17,7 +17,10 @@ import { GoogleAnalytics,GoogleTagManager } from '@next/third-parties/google'
 const montserrat = Montserrat({ 
   subsets: ["latin"],
   variable: "--font-montserrat", });
+
+const atkinson_Hyperlegible = Atkinson_Hyperlegible({subsets: ["latin"], weight:"400",variable: "--font-atkinson_hyperlegible",});  
   
+
 export function generateStaticParams() {
       return locales.map((locale) => ({locale}));
     }
@@ -45,8 +48,8 @@ export default async function RootLayout({
   const pages = [
     {"tab":"about", "href":"/about","color":'black'},  
      {"tab":"retos", "href":"/retos","color":'black'},
-    {"tab":"blog", "href":"/blog","color":'black'},
-    {"tab":"contacto", "href":"/contact","color":'black'}];
+    {"tab":"blog", "href":"https://www.linkedin.com/company/stoymakers-es/posts/?feedView=all","color":'black'},
+    {"tab":"contacto", "href":"https://tally.so/r/mBG4E1","color":'black'}];
 
 
     return (
@@ -63,9 +66,9 @@ export default async function RootLayout({
             </Head>
             <html lang={locale}> 
             <GoogleTagManager gtmId='GTM-N2K7KHR9' />
-            <body className={`${montserrat.className}`}>
+            <body className={`${atkinson_Hyperlegible.className}`}> {/*montserrat.className */}
               <NextIntlClientProvider messages={messages}> {/* Provider de idiomas */}
-              <ResponsiveAppBar pages={pages}  locales={locales}/>
+              <ResponsiveAppBar pages={pages}  locales={locales} styleLocales={styleLocales}/>
                   {children}
               <AppFooter pages={pages}/>
               </NextIntlClientProvider>

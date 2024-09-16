@@ -414,8 +414,8 @@ z-index:-1;
   height: 6rem;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   @media (min-width: 600px){  /* PARA PANTALLAS GRANDES*/
-    width:14rem;
-    height:14rem;
+    width:12rem;
+    height:12rem;
     margin: 1rem;
    }  
 }
@@ -461,6 +461,13 @@ z-index:-1;
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+
+.slidesStepsResponsive{  /*steps landing responsive*/
+  padding-right: 20%;
+  @media (min-width:600px) { /* PARA PANTALLAS GRANDES*/
+    padding-right: 30%;
+      }
 }
 
 /* ---------------------------------------------------- CARROUSEL ---------------------------------------------------- */

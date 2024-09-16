@@ -2,7 +2,10 @@ import { Typography,Box } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import CardActions from '@mui/material/CardActions';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
 import { useTranslations } from "next-intl";
 export default function CardCasoExito(){
 
@@ -14,23 +17,44 @@ export default function CardCasoExito(){
         <Box sx={{ display: 'flex', flexDirection: 'column', width:'100%' }}>
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography component="div" variant="h5" sx={{fontSize:{xs:20,md:30}}}>
-             {t('reconocimiento')}
+             {t('caso_exito_titulo')}
             </Typography>
-            <Typography variant="body1" component='section' color="text.secondary" 
-            sx={{fontSize:{xs:10, md:'100%'}}}
+            <Typography paragraph textAlign={'justify'} color="text.secondary"
+            sx={{fontSize:{xs:10, md:'100%'},}}
             >
-            Lorem ipsum dolor sit, consectetuer adipiscing. Lorem ipsum dolor sit, consectetuer adipiscing. Lorem ipsum dolor sit, consectetuer adipiscing
-           
+             {t('caso_exito')}
             </Typography>
           </CardContent>
         
+
+          <CardActions sx={{ flex: '1'}}>
+       <Button size="small" 
+       href='https://tedxupfmataro.es/'
+       target='_blank'
+       sx={{backgroundColor:'black!important'
+        ,color:'white'
+        ,textTransform: 'none'
+        ,width:{xs:150,sm:200,md:200}
+      }}
+       
+       endIcon={<NavigateNextIcon />}
+       >
+        {t('saber_mas')}
+
+        </Button>
+     </CardActions>
         </Box>
+
+        
+
         <CardMedia
           component="img"
           sx={{ width: 300 }}
-          image="tedx/tedx-business.png"
+          image="img/caso_de_exito_TEDx.jpg"
           alt="reconocimiento"
         />
+
+      
       </Card>
 
       </Paper>

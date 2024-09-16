@@ -6,6 +6,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Descripcion from "../../UI/descripcion";
 import DashboardLayout from "./DescLayout";
+//import "/public/video/storymakers_landing.mp4";
 
 export default function About() {
     const Item = styled(Paper)(({ theme }) => ({
@@ -19,14 +20,15 @@ export default function About() {
       }));
     return(
         <Typography variant="body1" component="div" >
-        <Container maxWidth='xl' >
-       <Grid container spacing={2} sx={{p:1}} direction='column'>
-        <Grid item xs>
-        <Item >INFO</Item>
-        </Grid>
-
-       </Grid>
-       </Container>
+      
+        {/*<Item >INFO</Item>*/} 
+     <div style={{position: "static", maxHeight:700,minWidth:'100%'}}> 
+     <video  autoPlay loop muted style={{right:0,bottom:0,}} > 
+      <source src="../video/conocenos.mp4"  type="video/mp4"/>
+          Your browser does not support the video tag.
+      </video>
+      </div>  
+       
        
        <DashboardLayout>
               <Descripcion/>
