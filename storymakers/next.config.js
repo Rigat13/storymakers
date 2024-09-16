@@ -42,7 +42,7 @@ module.exports = withNextIntl( {
   },
   
   
-  //output:"export",
+  output:"export",
   images: { unoptimized: true }
 
 
