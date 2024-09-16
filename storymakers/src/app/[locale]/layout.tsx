@@ -43,10 +43,10 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   const pages = [
-    {"tab":"about", "href":"/about","color":'black'},  
-     {"tab":"retos", "href":"/retos","color":'black'},
-    {"tab":"blog", "href":"/blog","color":'black'},
-    {"tab":"contacto", "href":"/contact","color":'black'}];
+    {"tab":"about", "href":"es/about.html","color":'black'},
+     {"tab":"retos", "href":"es/retos.html","color":'black'},
+    {"tab":"blog", "href":"es/blog.html","color":'black'},
+    {"tab":"contacto", "href":"es/contact.html","color":'black'}];
 
 
     return (
