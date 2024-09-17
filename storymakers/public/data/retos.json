@@ -1,0 +1,27 @@
+{
+    "data":[
+        {"id":0,
+  "reto":{
+  "marca":"Marca 1",
+  "info_marca":"Promueve un estilo de vida sostenible y consciente con la personalización de tu envase ecológico para tus compras a granel.",
+  "requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
+  "dificultad":3,
+  "recompensa":"19,80€",
+  "img":"../tedx/nosense-business.png"
+  }
+}
+, 
+
+{"id":1,
+  "reto":{
+    "marca":"Marca 2",
+    "info_marca":"Promueve un estilo de vida sostenible y consciente con la personalización de tu envase ecológico para tus compras a granel.",
+    "requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
+    "dificultad":3,
+    "recompensa":"19,80€",
+    "img":"../tedx/tedx-business.png"
+  }
+}
+
+    ]
+}

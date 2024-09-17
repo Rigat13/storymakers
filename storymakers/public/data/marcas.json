@@ -1,0 +1,14 @@
+{
+  "data":[
+    {"url":"https://tedxupfmataro.es/",
+     "card_front" :"tedx/tedx-business.png" ,
+     "card_back": "tedx/storymakers-back-card.png"
+}
+    ,
+    {"url":"https://nosense.es/",
+     "card_front" :"tedx/nosense-business.png" ,
+     "card_back": "tedx/storymakers-back-card.png"}
+]
+
+
+}

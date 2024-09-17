@@ -1,0 +1,17 @@
+{"data":[
+        {"id":0,
+  "reto":{
+  "marca":"TEDxUPFMataró",
+  "subtitlo_1":"Comunicado para todos los asistentes",
+  "subtitulo_2":"¡Sube tu contenido de TEDxUPFMataró! 🤩",
+  "info_marca":"La TED Conference es un evento internacional donde expertos de diferentes campos comparten ideas innovadoras en charlas cortas, abordando temas como ciencia, arte y política. A través de eventos TEDx, organizados de forma independiente, miles de charlas se difunden, con el objetivo de inspirar y generar impacto global.",
+  "introduccion":"Nuestros amigos organizadores del evento TEDxUPFMataró apuestan por hacer de sus comunicaciones más auténticas, humanas e interactivas, y para ello necesitan vuestra ayuda."
+  ,"atencion":["¿Eres asistente del evento TEDxUPFMataró el 8 de mayo? Esto es para ti ✨","Los ponentes nos han dejado un mensaje muy especial para ti ... Descubre de qué se trata y vive la experiencia al completo 🎙️ Con Storymakers, la autenticidad genera impacto. Sube tu contenido participando en","uno o más retos","para vivir la experiencia completa ;)"]
+  ,"requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
+  "dificultad":3,
+  "recompensa":"19,80€",
+  "img":"../tedx/nosense-business.png"
+  }
+    }
+]
+}

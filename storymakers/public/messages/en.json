@@ -1,0 +1,46 @@
+{
+    "appBar":{
+        "about": "About us",
+        "retos":"Campaigns",
+        "blog":"Blog",
+        "contacto":"Contact",
+        "iniciar_sesion":"Sign in",
+        "sign_in_dialog":"Oh you arrived before we have it prepared, since we are not keen on making spoilers,follow us on @storymakers.es and we will tell you when we have it ready ;)"
+        ,"aviso":"Important!!",
+        "okay":"Okay!"
+      },
+    "appFooter":{
+      "derechos_reservados":"All rights reserved."
+    },
+    "landing":{
+      "start_button":"Shall we start?",
+      "paso_anterior":"Previous",
+      "paso_siguiente":"Next",
+      "paso":"Step",
+      "contrata_subscripcion":"Subscribe to your plan.",
+      "titulo_fijo":"The thrill of feeling alive",
+      "eslogan_fijo":"We are ",
+      "eslogans":{"eslogan_1":"experiences","eslogan_2":"moments", "eslogan_3":"memories"}
+      ,"pasos":{"paso_1":{"title":"CREATE YOUR CAMPAIGN","body":"Define the goal of your campaign, create one or more challenges, and set the incentive that the content creator will receive."}
+      ,"paso_2":{"title":"VALIDATE and DOWNLOAD THE DIGITAL CONTENT","body":"The content creators liked your challenge and have already participated in it. Now it’s your turn. Review this authentic and high-quality content, and validate the content you plan to use for your communications."} 
+      ,"paso_3":{"title":"CAMPAIGN PERFORMANCE METRICS","body":"Once you've completed the previous steps, everything will be ready to analyze the campaign data."}     
+      }
+      ,"caso_exito_titulo":"Success Story"
+      ,"caso_exito":"What do brands do with all the content that is generated? At Storymakers, we wanted to conduct an experiment during TEDx, one of the top national and international conference events. We decided to launch three challenges to the attendees for content creation during the event. As a result, TEDxUPFMataró received videos and photos from its attendees, capturing them sharing and experiencing the event—an unbeatable feedback experience."
+      ,"saber_mas":"Learn more"
+    },
+
+    "retos":{
+      "requisitos":"Requirements",
+      "dificultad":" Difficulty",
+      "recompensa":"Reward",
+      "unirse":"Join the challenge",
+      "participar":"Participate",
+      "busca_retos":"Search challenges..."
+    },
+
+    "about":{ 
+      "story_description": "Stories have a unique power: they connect us, make us feel, and most importantly, impact us in ways few things can. In a world where authenticity is the new luxury, storytelling becomes the bridge that links brands with people. There is nothing more authentic than a well-told story because it reflects who we are, what we think, and what we feel. A good story doesn’t just inform, it inspires, creates empathy, and leaves a lasting impression. At Storymakers, we believe that stories are the heartbeat of effective communication, and we are dedicated to bringing them to life so they resonate powerfully in every digital corner." ,
+      "makers_description": "Makers are the heart of what we do. They are the people who, regardless of who they are, have a story to tell and the desire to share it. Here, content creators are not just clients or brand fans; they are individuals with their own voice, stories that want to be heard, and experiences that deserve to be shared. Whether it's a loyal customer, a potential buyer exploring for the first time, or even an internal team member, everyone has something to say. And at Storymakers, we are here to give them that space, to amplify those voices, and turn their experiences into content that resonates. Because at the end of the day, what truly moves people are the stories that makers create and share." 
+    }
+  }
