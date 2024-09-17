@@ -27,52 +27,37 @@ export default function Retos() {
         <Typography variant="body1" component="div" className="bg-white">
 
 {/* lo pongo aqui para que no tenga padding */}
-    <div style={{position: "static", maxHeight:600,minWidth:'100%'}}> 
+    <Typography component="div" sx={{position: "relative", maxHeight:{xs:150,md:400},minWidth:'100%',}}> 
         <video  autoPlay loop muted style={{right:0,bottom:0,}} > 
           <source src="../video/video_retos-30fps.mp4"  type="video/mp4"/>
               Your browser does not support the video tag.
-          </video>
-          </div>  
+          </video>          
+     </Typography>
 
-          
+         <Box sx={{display:'flex',justifyContent:"center",position: "relative",mb:{xs:11,md:25} }} >
+            <Button variant="contained"  role={undefined} size='large'
 
-<Grid container spacing={2} sx={{ 
- 
- justifyContent: "center",
-    alignItems: "center",
- 
-}} 
-direction='column'
->
- <Grid item xs={3} sx={{justifyContent: "center",  }}>
+          href='https://tally.so/r/n9vM7p'
+          target='_blank'
+          sx={{backgroundColor:'#000000!important',
+          width:200,
+          boxShadow:"none",
+          textTransform: 'none',
+          fontFamily:'inherit',
+          display:'flex',
 
-<Button variant="contained"  role={undefined} size='large'
-
-href='https://tally.so/r/n9vM7p'
-target='_blank'
-    sx={{backgroundColor:'#000000!important',
-      width:200,
-      boxShadow:"none",
-      textTransform: 'none',
-      fontFamily:'inherit',
-      display:{xs:'none', md:'flex',},
-     
-      
-    }} 
-    
-    >
-        {t('participar')}
-</Button>
-</Grid>
-</Grid>
-
-
+          }} >
+            {t('participar')}
+          </Button>
+        </Box>
   
        </Typography>
     
    ) 
   }
 
+
+/* PUEDE SER UTIL PARA EL PROXIMO DISEÑO DE LOS RETOS */
 
   /*
 
