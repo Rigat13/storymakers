@@ -47,9 +47,9 @@ export default async function RootLayout({
 
   const pages = [
     {"tab":"about", "href":"/about","color":'black'},  
-     {"tab":"retos", "href":"/retos","color":'black'},
+     {"tab":"campañas", "href":"/retos","color":'black'},
     {"tab":"blog", "href":"https://www.linkedin.com/company/stoymakers-es/posts/?feedView=all","color":'black'},
-    {"tab":"contacto", "href":"https://tally.so/r/mBG4E1","color":'black'}];
+    {"tab":"contacto", "href":"https://tally.so/r/n9vM7p","color":'black'}];
 
 
     return (
