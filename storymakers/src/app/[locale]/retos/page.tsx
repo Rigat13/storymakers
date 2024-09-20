@@ -138,13 +138,13 @@ function RetosTemporal(props){
    </Grid>
   ))} 
 <Grid item xs={6} md={3} >
-<ImageListItem  sx={{ width:{xs:'100%',md:'100%'} }} >
+<ImageListItem  sx={{ width:{xs:'100%',md:'100%'},  }} >
       <img
-        srcSet={`${'../img/about_makers.png'}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-        src={`${'../img/about_makers.png'}?w=164&h=164&fit=crop&auto=format`}
+        srcSet={`${'../img/martina_irati.png'}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+        src={`${'../img/martina_irati.png'}?w=164&h=164&fit=crop&auto=format`}
         alt={'siguiente_marca'}
         loading="lazy"
-        style={{borderRadius:15}}
+        style={{borderRadius:15, height:170}}
       />
       <ImageListItemBar position="bottom"
       title={ <AddCircleIcon fontSize='large' sx={{color:'#0045A8',background: 'radial-gradient(circle, rgba(0,0,0,1) 50%, ' + 'rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 0%)'}} />}
