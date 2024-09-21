@@ -64,7 +64,9 @@ export default function ResponsiveDialog() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button variant='contained' onClick={handleClose} autoFocus 
+          <Button  href='https://tally.so/r/n9vM7p'
+          target='_blank'
+          variant='contained' onClick={handleClose} autoFocus 
           sx={{textTransform:'none', color:'white', backgroundColor:'black!important'}}>
             {t('okay')}
           </Button>
@@ -75,7 +77,7 @@ export default function ResponsiveDialog() {
 }
 
 
-
+/*
 
 export  function ResponsiveDialogCampañas() {
   const t = useTranslations('appBar');
@@ -103,7 +105,7 @@ export  function ResponsiveDialogCampañas() {
                 }}
              
               >
-                     {/* ROUTING SECTIONS */}
+                    
 
                 {t('retos')}              
               </Button >
@@ -121,13 +123,22 @@ export  function ResponsiveDialogCampañas() {
          {t('sign_in_dialog')}
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button variant='contained' onClick={handleClose} autoFocus 
+        <DialogActions   >
+       
+          <Button  href='https://tally.so/r/n9vM7p'
+          target='_blank'
+          variant='contained'
+          //onClick={handleClose} 
+           autoFocus 
           sx={{textTransform:'none', color:'white', backgroundColor:'black!important'}}>
             {t('okay')}
           </Button>
+        
         </DialogActions>
       </Dialog>
     </React.Fragment>
   );
 }
+
+
+ */

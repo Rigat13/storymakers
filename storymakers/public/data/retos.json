@@ -2,24 +2,34 @@
     "data":[
         {"id":0,
   "reto":{
-  "marca":"Marca 1",
+  "marca":"Nosense",
   "info_marca":"Promueve un estilo de vida sostenible y consciente con la personalización de tu envase ecológico para tus compras a granel.",
   "requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
   "dificultad":3,
   "recompensa":"19,80€",
-  "img":"../tedx/nosense-business.png"
+  "img":"../img/logo_nosense.webp",
+  "link_reto":"",
+  "active":0,
+  "texto_boton_es":"próximamente",
+  "texto_boton_en":"coming soon",
+  "color_boton":"#ff6e00"
   }
 }
 , 
 
 {"id":1,
   "reto":{
-    "marca":"Marca 2",
+    "marca":"TEDx UPFMataró",
     "info_marca":"Promueve un estilo de vida sostenible y consciente con la personalización de tu envase ecológico para tus compras a granel.",
     "requisitos":["Promueve un estilo de vida sostenible ", "Promueve un estilo de vida sostenible"],
     "dificultad":3,
     "recompensa":"19,80€",
-    "img":"../tedx/tedx-business.png"
+    "img":"../tedx/tedx-business.png",
+    "link_reto":"https://tedxupfmataro.es/",
+    "active":1,
+    "texto_boton_es":"finalizado",
+    "texto_boton_en":"Completed",
+    "color_boton":"#b7b7b7"
   }
 }
 
