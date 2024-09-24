@@ -13,7 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import ResponsiveDialog, { ResponsiveDialogCampañas } from './dialogSignIn';
+import ResponsiveDialog from './dialogSignIn';
 
 //import AdbIcon from '@mui/icons-material/Adb';
 import {StoryMakersLogoBlack} from './svgComponent';

@@ -53,17 +53,29 @@ export function SearchBarGallery() {
       }
 
       
-function GaleriaTab(props){
+export function GaleriaTab(props){
      const t = useTranslations('retos');
 
-     let numRetos= props.num
+    // let numRetos= props.num
      let retos = props.retos
-     let checked = props.checked
+      
+     if(retos){
+      if(retos.length>0){
+        
+    // let checked = props.checked
+
+
         /*   ABAJO DE TODO VERSION CON GRID*/
+
+        // cols={checked? 2 : 5}
+
     return(
-         <ImageList cols={checked? 2 : 5} rowHeight={164} sx={{width:{xs:'90%',md:'100%'} }}>
+
+      <TabPanel  value={0} index={0} >  {/* SI HACE FALTA MAS TABS, QUITAR TABPANEL DE AQUI Y USAR RETOSGALERIA */}
+
+         <ImageList cols={5} rowHeight={184} sx={{width:{xs:'90%',md:'100%'} }}>  
   {retos.map((item) => (
-    <ImageListItem key={item.reto.img} onClick={()=>props.onChange(item.id)} //ABRE O CIERRA INFO LATERAL DEL RETO
+    <ImageListItem key={item.reto.img}  // onClick={()=>props.onChange(item.id)} ABRE O CIERRA INFO LATERAL DEL RETO
     sx={{p:2, width:{xs:150,md:'100%'} }}
     >
       <img
@@ -74,24 +86,25 @@ function GaleriaTab(props){
         style={{borderRadius:20}}
       />
       <ImageListItemBar position="top" 
-      title={<Typography variant='h6' component={'h2'} sx={{textAlign:'left'}}>{item.reto.marca}</Typography>} 
+     title={<Typography variant='h6' component={'h2'} sx={{textAlign:'left',color:`${item.reto.active?'gray':'white'}` }}>{item.reto.marca}</Typography>} 
       subtitle={<Typography >
-       <Typography variant='caption' component="div" noWrap >{item.reto.info_marca}</Typography> 
-        <Button variant="contained"  sx={{textTransform: 'none', mt:1,font:'inherit',
-        backgroundColor:'#F0A362!important',  
+     {/* <Typography variant='caption' component="div" noWrap sx={{textAlign:'left',color:`${item.reto.active?'gray':'white'}`}}>{item.reto.info_marca}</Typography>*/ }
+        <Button variant="contained"  href={item.reto.link_reto} target='_blank'
+        sx={{textTransform: 'none', mt:7,ml:1,font:'inherit',color:`${item.reto.active?'black':'white'}`,
+        backgroundColor:`${item.reto.active?'#6f6b6a!important':'#F0A362!important'}`,  
       }} > {t('participar')}</Button>
       </Typography>}
       
-      sx={{height:'90%',width:'81%',ml:2,
+      sx={{height:'98%',width:'84%',ml:2,
         background:
-          'linear-gradient(to top, rgba(0,0,0,0.7) 0%, ' +
+          'linear-gradient(to top, rgba(0,0,0,0) 0%, ' +
           'rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 90%)' ,
         borderRadius:5,
       }}/>
     </ImageListItem>
   ))}
 
-{/*  ARRAY DE PRUEBA SEGUN NUMERO DE RETOS */}
+{/*  ARRAY DE PRUEBA SEGUN NUMERO DE RETOS 
 {   [...Array(numRetos)].map((i) =>(
                 <ImageListItem key={i} onClick={()=>props.onChange(0)} sx={{p:2 ,width:{xs:150,md:'100%'}}} >
      
@@ -122,10 +135,15 @@ function GaleriaTab(props){
           
                
      ))} 
-</ImageList>
+      
+      */}
+</ImageList> 
 
+</TabPanel>
        )
-         
+
+      }}
+      
   }
   
 

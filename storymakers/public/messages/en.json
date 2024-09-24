@@ -1,7 +1,8 @@
 {
     "appBar":{
         "about": "About us",
-        "retos":"Campaigns",
+        "campañas":"Campaigns",
+        "retos":"Challenges",
         "blog":"Blog",
         "contacto":"Contact",
         "iniciar_sesion":"Sign in",

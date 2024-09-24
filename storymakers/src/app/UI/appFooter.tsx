@@ -85,7 +85,7 @@ export default function AppFooter({pages}){
                     <LinkedInIcon sx={{color:'white'}} />
                     </IconButton>
 
-                    <IconButton>
+                    <IconButton href='https://www.tiktok.com/@storymakers.es'>
                     <TikTokLogo sx={{color:'white'}}/>
                     </IconButton>
 
